@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableStrikesComponent implements OnInit {
 
-  constructor() { }
+  public strike;
+
+  constructor() { 
+    this.strike = {
+      id: 1,
+      nombre: "Juntos contra el COVID-19",
+      fecha: "10/05/2020",
+      hashtag: "#TodosJuntos"
+    }
+  }
 
   ngOnInit(): void {
   }
