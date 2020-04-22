@@ -1,0 +1,35 @@
+<div class="tab-content" id="pills-tabContent">
+    <div
+            class="tab-pane fade show active"
+            id="pills-admin"
+            role="tabpanel"
+            aria-labelledby="pills-admin-tab"
+        >
+        <h2>Marchas</h2>
+        <!-- TABLE-->
+
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col" id="date">Fecha</th>
+                <th scope="col" id="hash">#hastag</th>
+                <th scope="col">editar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="table-row">{{strike.id}}</th>
+                <td>{{strike.nombre}}</td>
+                <td id="date">{{strike.fecha}}</td>
+                <td id="hash">{{strike.hashtag}}</td>
+                <td class="table-row">
+                <a><i class="material-icons md-dark">create</i></a>
+                <a><i class="material-icons md-dark">delete</i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
