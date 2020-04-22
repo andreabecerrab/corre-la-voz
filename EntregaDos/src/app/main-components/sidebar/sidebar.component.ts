@@ -3,8 +3,7 @@ declare const fullHeight: any;
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.sass']
+  templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
 
