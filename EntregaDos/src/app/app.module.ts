@@ -17,18 +17,16 @@ import { RibbonComponent } from './main-components/ribbon/ribbon.component';
 @NgModule({
   declarations: [
     AppComponent,
-
+    LoginComponent,
     MenuComponent,
-
+    SiginComponent,
+    RibbonComponent,
     HeaderComponent,
     MenuComponent,
     AdminDashboardComponent,
     TableStrikesComponent,
     SidebarComponent,
     ProfileComponent
-  ],
-  imports: [
-    BrowserModule
   ],
   imports: [BrowserModule, LandingpageModule],
   bootstrap: [AppComponent],
