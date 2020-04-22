@@ -8,6 +8,7 @@ import { MenuComponent } from './main-components/menu/menu.component';
 import { LandingpageModule } from './modules/landingpage/landingpage.module';
 import { LoginComponent } from './main-components/login/login.component';
 import { SiginComponent } from './main-components/sigin/sigin.component';
+import { RibbonComponent } from './main-components/ribbon/ribbon.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SiginComponent } from './main-components/sigin/sigin.component';
     HeaderComponent,
     LoginComponent,
     SiginComponent,
+    RibbonComponent,
   ],
   imports: [BrowserModule, LandingpageModule],
   bootstrap: [AppComponent],
