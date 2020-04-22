@@ -12,9 +12,7 @@ import { SiginComponent } from './main-components/sigin/sigin.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     MenuComponent,
-
     HeaderComponent,
     LoginComponent,
     SiginComponent,
