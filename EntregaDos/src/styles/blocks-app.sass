@@ -1,0 +1,94 @@
+
+.tab-content
+    margin-left: 260px
+    h2, h6, h5
+        color: $rgba-header
+    h2 
+        margin-bottom: 3rem
+    a 
+        color: $rgba-header
+    .tab-pane
+        padding-top: 5rem
+
+    //profile data
+    .p-data
+        border-color: transparent
+        width: 30%
+        background-color: $color-yellow
+        margin-bottom: 2rem
+        height: 2.5rem
+        padding-left: 0.5rem
+        justify-content: center
+    h6, h5
+        font-size: inherit
+        font-weight: bold
+    .my-btn
+        width: 15%
+        background-color: $color-red
+        color: color("white")
+    .my-btn:hover
+        background-color: $color-green
+        color: color("white")
+    //strikes
+    index-page
+        justify-content: space-between
+        background-color: transparent
+        width: 90%
+        form 
+            width: 80%
+            .form-control 
+                background-color: $pastel-red
+                border-bottom: 2px solid $color-red
+            .btn 
+                background-color: $color-red
+                color: color("white")
+        h3 
+            color: $color-red
+    .section-single-style, index-content
+        justify-content: space-between
+        width: 100%
+    strike-content 
+        width: 75%  
+        .my-btn
+            margin-top: 0.8rem
+            width: 50%
+
+@include large
+    .tab-content
+        margin-left: 150px
+        .my-btn
+            width: 30%
+        .p-data, .contribution, .card
+            width: 70%
+        .section-style 
+            width: 100%
+            .card
+                width: 70%
+                .btn 
+                    width: 50%
+        .places-options, .orders-options
+            flex-direction: column
+        strike-content
+            width: 65%
+        twitter 
+            width: 35%
+        tw-card
+            width: 100%
+@include mobile
+    .tab-content
+        margin-left: 30px
+        .p-data
+            width: 90%
+        .section-style 
+            padding: 0.5rem 0rem
+            .form-control
+                width: 90%
+            card
+                width: 95%
+        profile 
+                width: 90%
+        index-page
+            form 
+                width: 100%
+        #date, #hash
+            display: none

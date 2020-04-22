@@ -1,0 +1,79 @@
+@import "variables"
+@import "responsive"
+
+strike-content
+    .img-main
+        width: 70%
+        border-radius: 1.5rem
+    p 
+        max-width: 70%
+    map 
+        width: 50%
+        img 
+            width: 100%
+    interactions 
+            display: flex
+            flex-direction: column
+            justify-content: center
+            margin-left: 1rem
+    form 
+        margin-bottom: 1rem
+    
+map-section
+        margin-bottom: 4rem
+        
+comments
+        display: none
+images-section
+        margin-bottom: 4rem
+        display: block
+        
+carousel
+        width: 70%
+        display: block
+        margin-bottom: 2rem
+
+input[type="file"]
+    display: none
+
+
+.carousel-inner
+    height: 30rem
+.carousel-item
+    height: 100%
+    border-radius: 1rem
+    img 
+        width: 100%
+        max-height: 100%
+        border-radius: 1rem
+
+@include large
+    .carousel-inner
+        height: 13rem
+    carousel
+        width: 80%
+    strike-content
+        .img-main, map
+            width: 80%
+ 
+@include mobile
+    .carousel-inner
+        height: 13rem
+    .tab-content
+        width: 90%
+        .my-btn
+            width: 50%
+        .img-main, map, strike-content, carousel, twitter
+            width: 95%
+        strike-content
+            p
+                max-width: 90%
+                text-align: justify
+    other-section
+                display: flex
+                flex-direction: column
+    
+    .file 
+        width: 40%
+
+    

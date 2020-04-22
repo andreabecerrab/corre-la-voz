@@ -1,0 +1,74 @@
+
+nav 
+    border-radius: 0rem 2rem 2rem 0rem
+    z-index: 300
+.wrapper 
+    display: flex
+    width: 100%
+#sidebar 
+    background-color: $color-purple
+    min-width: 200px
+    max-width: 250px
+    color: #fff
+    transition: all 0.3s
+    position: fixed
+    &.active
+        margin-left: -270px
+        .custom-menu 
+            margin-right: -100px
+.custom-menu
+    display: inline-block
+    position: absolute
+    top: 35px
+    right: 0
+    margin-right: -70px
+    @include transition(0.3s)
+    .btn 
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        background-color: $color-yellow
+    i
+        font-size: 35px
+ul
+    list-style-type: none
+    text-align: end
+    padding: 1.5rem
+    li 
+        font-size: 18px
+        margin: 1.5rem 0rem
+    
+@include media-breakpoint-down(md)
+    #sidebar 
+        margin-left: -270px
+        &.active 
+            margin-left: 0
+    
+    .custom-menu 
+        margin-right: -70px !important
+        top: 10px !important
+    
+.sidebar-content 
+    text-align: center
+    padding: 2rem
+
+a[data-toggle="collapse"] 
+    position: relative
+
+.dropdown-toggle::after 
+    display: block
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+
+#sidebarCollapse 
+    span
+        display: none
+        @include media-breakpoint-down(md) 
+        
+    
+  
+

@@ -1,0 +1,81 @@
+
+@mixin reset-col
+    display: flex
+    flex-direction: column
+    justify-content: center
+@mixin img-landing
+    background-size: cover
+    border-radius: 3rem 8rem 3rem 8rem
+.information
+    margin-top: 9.5rem
+    height: fit-content
+    .index-container
+        h1 
+            color: $color-purple
+        .index-row
+            height: 100%
+            margin: 0
+            margin-bottom: 3rem
+        .index-col 
+            margin-left: 3rem
+            flex-basis: 0
+            flex-grow: 1
+            max-width: 100%
+            @include reset-col
+            @include make-col-ready(20)
+                
+            h2 
+                color: $color-green  
+            h4 
+                color: $rgba-header
+            p 
+                text-align: justify 
+        .img-food
+            background-image: url(img/cover.jpg)
+            @include img-landing
+        .my-btn
+            width: 50%
+            background-color: $color-red
+            color: color("white")
+        .my-btn:hover
+            background-color: $color-orange
+            color: color("white")
+        form .my-btn
+            background-color: $color-purple
+        .op-form-control
+            width: 75%
+        .image
+            align-items: center
+            .image-example 
+                width: 180px
+    .benefits 
+        margin-bottom: 5rem
+        .index-row
+            text-align: center
+            .index-col
+                margin-left: 0
+
+@include mobile 
+    .information
+        .index-container
+            .image
+                display: none
+            .index-row
+                flex-direction: column
+            .index-col
+                margin-left: 0
+            .img-food
+                height: 6rem
+            .op-form-control 
+                width: 100%
+        .benefits 
+            .index-row
+                text-align: start
+
+
+    
+           
+        
+
+
+

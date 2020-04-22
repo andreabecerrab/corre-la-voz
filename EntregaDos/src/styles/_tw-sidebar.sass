@@ -1,0 +1,34 @@
+
+
+@mixin align-letters
+    margin: 0
+    align-self: center
+.tw-sidebar
+    width: 25%
+
+.tw-header
+ 
+    justify-content: center
+.tweets
+    display: flex
+    flex-direction: column
+tw-card 
+    padding: 1rem
+    width: 100%
+    .tw-light, .tw-handle
+        color: $light-font
+        font-size: 14px
+    .tw-handle
+        @include align-letters
+    .tw-name
+        font-weight: bold
+        color: $rgba-header
+        @include align-letters
+    p
+        margin-bottom: 0
+
+        
+.material-icons.md-18
+    font-size: 18px
+    color: $light-icons
+    

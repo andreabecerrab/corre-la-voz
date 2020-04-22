@@ -1,0 +1,51 @@
+@import "../node_modules/bootstrap/scss/utilities/position"
+@import "../node_modules/bootstrap/scss/reboot"
+@import "../node_modules/bootstrap/scss/grid"
+@import "../node_modules/bootstrap/scss/forms"
+@import "../node_modules/bootstrap/scss/buttons"
+
+html, body 
+    font-family: $primary-font
+    margin: 0
+html 
+    scroll-behavior: smooth
+body 
+    background-color: $background-color
+a 
+    font-family: $primary-font
+    color: $color-white
+    cursor: pointer
+a:hover 
+    color: $color-orange
+.op-form-md
+    @extend .form-group
+    @extend .col-md-6
+.op-form-control
+    @extend .form-control
+.op-form-control
+    border: 0 transparent
+    background-color: transparent
+    border-bottom: 2px solid$color-orange
+    border-radius: 0.2rem 0.2rem 0rem 0rem
+input[type="password"]:focus,input[type="text"]:focus,input[type="email"]:focus,button[type="submit"]:focus
+    border-color: $color-orange
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0 0 10px $pastel-yellow
+    outline: 0 none
+.my-btn, .ln-btn
+    border-radius: 1rem
+    @extend .btn
+.index-row
+    margin: 0
+    @include make-row()
+.index-container
+    max-width: 1140px
+    height: fit-content
+    padding-top: 10rem
+    @include make-container(40px)
+.footer-container
+    max-width: 1140px
+    @include make-container(30px)
+    
+
+
+

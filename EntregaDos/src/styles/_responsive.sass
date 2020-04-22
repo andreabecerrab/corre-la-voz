@@ -1,0 +1,11 @@
+@import "variables"
+
+@mixin mobile
+    @media (max-width:#{$breakpoint-sm})
+        @content
+@mixin tablet
+    @media (max-width:#{$breakpoint-m})
+        @content
+@mixin large
+    @media (max-width:#{$breakpoint-l})
+        @content

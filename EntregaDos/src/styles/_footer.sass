@@ -1,0 +1,36 @@
+
+footer 
+    position: static
+    bottom: 0
+    width: 100%
+    height: auto
+    width: 100%
+    background-color: color("white")
+    padding: 15px
+    border-radius: 0.5rem
+    .index-row 
+        justify-content: space-between
+    footer-col
+        display: flex
+        flex-direction: column
+        justify-content: center
+        @include make-col-auto()
+    a 
+        color: $color-purple 
+footer ul
+    list-style-type: none
+   
+.email
+    border-bottom: 3px solid $color-purple
+
+footer ul li a 
+    font-size: 16px
+
+@include mobile 
+    ul
+        padding: 0px
+    footer
+        .index-row
+            flex-direction: column
+
+
