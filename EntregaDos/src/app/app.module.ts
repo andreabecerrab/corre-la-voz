@@ -13,6 +13,9 @@ import { LandingpageModule } from './modules/landingpage/landingpage.module';
 import { LoginComponent } from './main-components/login/login.component';
 import { SiginComponent } from './main-components/sigin/sigin.component';
 import { RibbonComponent } from './main-components/ribbon/ribbon.component';
+import { UserModule } from './modules/user/user.module';
+
+import { TabContentComponent } from './main-components/tab-content/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,9 @@ import { RibbonComponent } from './main-components/ribbon/ribbon.component';
     TableStrikesComponent,
     SidebarComponent,
     ProfileComponent,
+    TabContentComponent,
   ],
-  imports: [BrowserModule, LandingpageModule],
+  imports: [BrowserModule, LandingpageModule, UserModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
