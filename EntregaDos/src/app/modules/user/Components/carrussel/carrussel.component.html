@@ -1,17 +1,35 @@
-<div  id="carouselExampleControls" class=" carousel carousel slide pointer-event" data-ride="carousel">
+<div class="images-section">
+  <div
+    id="carouselExampleControls"
+    class="carousel carousel slide pointer-event"
+    data-ride="carousel"
+  >
     <!-- IMGS-->
     <div class="carousel-inner">
-      <app-carrussel></app-carrussel>
-      <app-carrussel></app-carrussel>
-      <app-carrussel></app-carrussel>
+      <app-carrourel-item></app-carrourel-item>
     </div>
     <!-- CONTROLS-->
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="prev"
+    >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only"></span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="next"
+    >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only"></span>
     </a>
+  </div>
+
+  <form>
+    <label class="file">Agregar imagen<input type="file" /></label>
+  </form>
 </div>
