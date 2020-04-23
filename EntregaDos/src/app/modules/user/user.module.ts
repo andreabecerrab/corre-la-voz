@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-<<<<<<< HEAD
-=======
 import {CardComponent} from './components/card/card.component';
 import {ToastComponent} from './components/toast/toast.component';
 import {ContCarruselComponent} from './components/cont-carrusel/cont-carrusel.component';
@@ -30,17 +28,10 @@ import {CarrourelItemComponent} from './Components/carrourel-item/carrourel-item
 
 
 
->>>>>>> liad
 
 
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-=======
   declarations: [CardComponent,
     ToastComponent,ContCarruselComponent, CarrusselComponent,ContentMapaComponent,MapaComponent, 
     InteracrionsComponent, AgregarMarkComponent, AgregarpuntoComponent, DescriptionMarchaComponent,
@@ -48,6 +39,5 @@ import {CarrourelItemComponent} from './Components/carrourel-item/carrourel-item
     TwitterComponent, TwCardComponent, CarrourelItemComponent ],
 
     imports: [CommonModule]
->>>>>>> liad
 })
 export class UserModule { }
