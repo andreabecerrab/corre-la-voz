@@ -1,7 +1,7 @@
 @import "variables"
 @import "responsive"
 
-strike-content
+.strike-content
     .img-main
         width: 70%
         border-radius: 1.5rem
@@ -11,7 +11,7 @@ strike-content
         width: 50%
         img 
             width: 100%
-    interactions 
+    .interactions 
             display: flex
             flex-direction: column
             justify-content: center
@@ -19,16 +19,16 @@ strike-content
     form 
         margin-bottom: 1rem
     
-map-section
+.map-section
         margin-bottom: 4rem
         
 comments
         display: none
-images-section
+.images-section
         margin-bottom: 4rem
         display: block
         
-carousel
+.carousel
         width: 70%
         display: block
         margin-bottom: 2rem
@@ -50,9 +50,9 @@ input[type="file"]
 @include large
     .carousel-inner
         height: 13rem
-    carousel
+    .carousel
         width: 80%
-    strike-content
+    .strike-content
         .img-main, map
             width: 80%
  
@@ -63,13 +63,13 @@ input[type="file"]
         width: 90%
         .my-btn
             width: 50%
-        .img-main, map, strike-content, carousel, twitter
+        .img-main, map, .strike-content, .carousel, .twitter
             width: 95%
-        strike-content
+        .strike-content
             p
                 max-width: 90%
                 text-align: justify
-    other-section
+    .other-section
                 display: flex
                 flex-direction: column
     
