@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 //main components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
-import { MenuComponent } from './main-components/menu/menu.component';
 import { SidebarComponent } from './main-components/sidebar/sidebar.component';
 import { ProfileComponent } from './main-components/profile/profile.component';
 import { LoginComponent } from './main-components/login/login.component';
@@ -16,15 +15,11 @@ import { AdminModule } from './modules/admin/admin.module';
 
 @NgModule({
   declarations: [
-    MenuComponent,
     HeaderComponent,
     AppComponent,
     LoginComponent,
-    MenuComponent,
     SiginComponent,
     RibbonComponent,
-    HeaderComponent,
-    MenuComponent,
     SidebarComponent,
     ProfileComponent,
   ],
