@@ -14,6 +14,8 @@ import { ResourcesComponent } from './components/resources/resources.component';
 import { TwitterComponent } from './components/twitter/twitter.component';
 import { TwCardComponent } from './components/tw-card/tw-card.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
+import { CommentsComponent } from './components/comments/comments.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { UserhomeComponent } from './components/userhome/userhome.component';
     TwCardComponent,
     CarrourelItemComponent,
     UserhomeComponent,
+    CommentsComponent,
   ],
 
   imports: [CommonModule],

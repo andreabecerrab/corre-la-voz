@@ -21,7 +21,7 @@ import { AdminModule } from './modules/admin/admin.module';
     SiginComponent,
     RibbonComponent,
     SidebarComponent,
-    ProfileComponent,
+    ProfileComponent
   ],
   imports: [BrowserModule, LandingpageModule, UserModule, AdminModule],
   bootstrap: [AppComponent],
