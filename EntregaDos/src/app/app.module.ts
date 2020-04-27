@@ -14,7 +14,7 @@ import { UserModule } from './modules/user/user.module';
 import { AdminModule } from './modules/admin/admin.module';
 //routing
 import { AppRoutingModule } from './app-routing.module';
-import { LandingpageComponent } from './main-components/landingpage/landingpage.component';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -24,7 +24,6 @@ import { LandingpageComponent } from './main-components/landingpage/landingpage.
     RibbonComponent,
     SidebarComponent,
     ProfileComponent,
-    LandingpageComponent,
   ],
   imports: [
     BrowserModule,
