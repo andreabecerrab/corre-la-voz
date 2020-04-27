@@ -12,7 +12,9 @@ import { RibbonComponent } from './main-components/ribbon/ribbon.component';
 import { LandingpageModule } from './modules/landingpage/landingpage.module';
 import { UserModule } from './modules/user/user.module';
 import { AdminModule } from './modules/admin/admin.module';
-
+//routing
+import { AppRoutingModule } from './app-routing.module';
+import { LandingpageComponent } from './main-components/landingpage/landingpage.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -21,9 +23,16 @@ import { AdminModule } from './modules/admin/admin.module';
     SiginComponent,
     RibbonComponent,
     SidebarComponent,
-    ProfileComponent
+    ProfileComponent,
+    LandingpageComponent,
   ],
-  imports: [BrowserModule, LandingpageModule, UserModule, AdminModule],
+  imports: [
+    BrowserModule,
+    LandingpageModule,
+    UserModule,
+    AdminModule,
+    AppRoutingModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
