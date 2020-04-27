@@ -15,10 +15,9 @@ import { TwitterComponent } from './components/twitter/twitter.component';
 import { TwCardComponent } from './components/tw-card/tw-card.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
-
+import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
-import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
 
 @NgModule({
   declarations: [

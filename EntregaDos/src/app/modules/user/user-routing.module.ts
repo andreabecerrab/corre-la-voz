@@ -6,7 +6,7 @@ import { ResourcesComponent } from './components/resources/resources.component';
 import { ProfileComponent } from '../../main-components/profile/profile.component';
 
 const routes: Routes = [
-  { path: 'usuario-inicio', component: UserhomeComponent },
+  { path: 'inicio', component: UserhomeComponent },
   { path: 'marcha', component: ResourcesComponent },
   { path: 'perfil', component: ProfileComponent },
   { path: 'editar-perfil', component: ProfileComponent },
