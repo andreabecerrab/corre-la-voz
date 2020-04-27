@@ -24,12 +24,13 @@ const routes: Routes = [
   },
   //user
   {
-    path: 'home',
+    path: 'usuario',
     loadChildren: './modules/user/user.module#UserModule',
   },
+
   //admin
   {
-    path: 'admin-home',
+    path: 'admin',
     loadChildren: './modules/admin/admin.module#AdminModule',
   },
 ];

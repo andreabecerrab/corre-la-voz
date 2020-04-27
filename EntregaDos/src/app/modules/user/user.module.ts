@@ -16,6 +16,9 @@ import { TwCardComponent } from './components/tw-card/tw-card.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
 
+//routing
+import { UserRoutingModule } from './user-routing.module';
+import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,10 @@ import { CommentsComponent } from './components/comments/comments.component';
     CarrourelItemComponent,
     UserhomeComponent,
     CommentsComponent,
+    UsersidebarComponent,
   ],
 
-  imports: [CommonModule],
+  imports: [CommonModule, UserRoutingModule],
   exports: [UserhomeComponent, ResourcesComponent],
 })
 export class UserModule {}

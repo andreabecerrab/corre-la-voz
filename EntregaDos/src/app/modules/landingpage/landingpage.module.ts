@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IndexComponent } from './components/index/index.component';
+//routing
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { IndexComponent } from './components/index/index.component';
     FooterComponent,
     IndexComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, AppRoutingModule],
   exports: [IndexComponent],
 })
 export class LandingpageModule {}
