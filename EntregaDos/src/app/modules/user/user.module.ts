@@ -14,8 +14,6 @@ import { TwitterComponent } from './components/twitter/twitter.component';
 import { TwCardComponent } from './components/tw-card/tw-card.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
-import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
-import { UserprofileComponent } from './components/userprofile/userprofile.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
 
@@ -34,9 +32,7 @@ import { UserRoutingModule } from './user-routing.module';
     TwCardComponent,
     UserhomeComponent,
     CommentsComponent,
-    UsersidebarComponent,
     CardComponent,
-    UserprofileComponent,
   ],
   exports: [UserhomeComponent, ResourcesComponent],
   imports: [CommonModule, UserRoutingModule],

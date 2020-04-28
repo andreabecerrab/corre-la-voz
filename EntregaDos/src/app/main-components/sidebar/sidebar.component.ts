@@ -3,24 +3,15 @@ declare const fullHeight: any;
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html'
+  templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent implements OnInit {
-
-  public pages:string[];
-
-  constructor() { 
-    this.pages = [
-      "Perfil", "Agregar", "Marchas", "Cerrar Sesión"
-    ]
-  }
+  constructor() {}
 
   ngOnInit(): void {
     fullHeight();
   }
-
   // onClick(){
   //   fullHeight();
   // }
-
 }

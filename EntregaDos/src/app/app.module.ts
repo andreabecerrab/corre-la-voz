@@ -14,6 +14,8 @@ import { UserModule } from './modules/user/user.module';
 import { AdminModule } from './modules/admin/admin.module';
 //routing
 import { AppRoutingModule } from './app-routing.module';
+import { UserSidebarComponent } from './main-components/user-sidebar/user-sidebar.component';
+import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     RibbonComponent,
     SidebarComponent,
     ProfileComponent,
+    UserSidebarComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

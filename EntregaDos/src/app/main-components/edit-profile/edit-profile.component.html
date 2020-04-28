@@ -9,19 +9,17 @@
     <h2>Perfil</h2>
     <div>
       <h6>Nombre</h6>
-      <div class="card p-data">{{ nombreUsuario }}</div>
+      <input type="text" class="card p-data" />
       <h6>Apellido</h6>
-      <div class="card p-data">{{ apellidoU }}</div>
+      <input type="text" class="card p-data" />
       <h6>Correo</h6>
-      <div class="card p-data">{{ emailU }}</div>
-      <h6>ID</h6>
-      <div class="card p-data">{{ idUsuario }}</div>
+      <input type="text" class="card p-data" />
       <button
-        routerLink="/usuario/editar-perfil"
+        routerLink="/usuario/perfil"
         routerLinkActive="class1"
         class="my-btn"
       >
-        Editar
+        Guardar
       </button>
     </div>
   </div>

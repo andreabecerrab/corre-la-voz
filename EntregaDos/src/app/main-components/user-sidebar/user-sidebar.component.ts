@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 declare const fullHeight: any;
 
 @Component({
-  selector: 'app-usersidebar',
-  templateUrl: './usersidebar.component.html',
+  selector: 'app-user-sidebar',
+  templateUrl: './user-sidebar.component.html',
 })
-export class UsersidebarComponent implements OnInit {
+export class UserSidebarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
