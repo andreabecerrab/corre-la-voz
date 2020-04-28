@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare const fullHeight: any;
 
 @Component({
   selector: 'app-usersidebar',
@@ -7,5 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class UsersidebarComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    fullHeight();
+  }
 }

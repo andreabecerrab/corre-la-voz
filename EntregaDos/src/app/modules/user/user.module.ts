@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
 import { ToastComponent } from './components/toast/toast.component';
-import { CarrourelItemComponent } from './components/carrourel-item/carrourel-item.component';
 import { CarrusselComponent } from './components/carrussel/carrussel.component';
 import { ContentMapaComponent } from './components/content-mapa/content-mapa.component';
 import { MapaComponent } from './components/mapa/mapa.component';
@@ -16,12 +15,12 @@ import { TwCardComponent } from './components/tw-card/tw-card.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
-    CardComponent,
     ToastComponent,
     CarrusselComponent,
     ContentMapaComponent,
@@ -33,13 +32,13 @@ import { UserRoutingModule } from './user-routing.module';
     ResourcesComponent,
     TwitterComponent,
     TwCardComponent,
-    CarrourelItemComponent,
     UserhomeComponent,
     CommentsComponent,
     UsersidebarComponent,
+    CardComponent,
+    UserprofileComponent,
   ],
-
-  imports: [CommonModule, UserRoutingModule],
   exports: [UserhomeComponent, ResourcesComponent],
+  imports: [CommonModule, UserRoutingModule],
 })
 export class UserModule {}

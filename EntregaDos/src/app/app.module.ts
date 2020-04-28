@@ -32,6 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
     AdminModule,
     AppRoutingModule,
   ],
+  exports: [ProfileComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

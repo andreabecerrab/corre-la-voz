@@ -8,6 +8,7 @@ import { IndexComponent } from './modules/landingpage/components/index/index.com
 //components
 import { LoginComponent } from './main-components/login/login.component';
 import { SiginComponent } from './main-components/sigin/sigin.component';
+import { SidebarComponent } from './main-components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarrourelItemComponent } from './carrourel-item.component';
+import { UserprofileComponent } from './userprofile.component';
 
-describe('CarrourelItemComponent', () => {
-  let component: CarrourelItemComponent;
-  let fixture: ComponentFixture<CarrourelItemComponent>;
+describe('UserprofileComponent', () => {
+  let component: UserprofileComponent;
+  let fixture: ComponentFixture<UserprofileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarrourelItemComponent ]
+      declarations: [ UserprofileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarrourelItemComponent);
+    fixture = TestBed.createComponent(UserprofileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
