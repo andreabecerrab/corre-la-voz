@@ -12,6 +12,7 @@ nav
     color: #fff
     transition: all 0.3s
     position: fixed
+    bottom: 0
     &.active
         margin-left: -270px
         .custom-menu 
@@ -19,7 +20,7 @@ nav
     .custom-menu
         display: inline-block
         position: absolute
-        top: 35px
+        top: 12px
         right: 0
         margin-right: -70px
         @include transition(0.3s)
@@ -39,6 +40,10 @@ nav
         li 
             font-size: 18px
             margin: 1.5rem 0rem
+    footer 
+        color: $rgba-header
+        position: absolute
+        border-radius: 0rem 0rem 1.5rem 0
     
 @include media-breakpoint-down(md)
     #sidebar 

@@ -1,0 +1,55 @@
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane show active index-page">
+    <h2>Editar marcha</h2>
+    <!-- ADD-->
+    <form>
+      <div class="form-row">
+        <div class="op-form-md">
+          <label>Nombre</label>
+          <input type="text" class="op-form-control" />
+        </div>
+        <div class="op-form-md">
+          <label>Fecha</label>
+          <input type="date" class="op-form-control" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="op-form-md">
+          <label>Descripción</label>
+          <input type="text" class="op-form-control" />
+        </div>
+        <div class="op-form-md">
+          <label>#hashtag</label>
+          <input type="text" class="op-form-control" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="op-form-md">
+          <label>Dirección incio</label>
+          <input
+            type="text"
+            class="op-form-control"
+            placeholder="Av. anibeuhoiw"
+          />
+        </div>
+        <div class="op-form-md">
+          <label>Dirección fin</label>
+          <input
+            type="text"
+            class="op-form-control"
+            placeholder="Av. anibeuhoiw"
+          />
+        </div>
+      </div>
+      <label class="file">Agregar imagen<input type="file" /></label>
+      <button
+        type="submit"
+        class="my-btn"
+        routerLink="/admin/marchas"
+        routerLinkActive="class1"
+      >
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>

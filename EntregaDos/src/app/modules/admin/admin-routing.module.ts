@@ -5,12 +5,14 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { TableStrikesComponent } from './components/table-strikes/table-strikes.component';
 import { ProfileComponent } from '../../main-components/profile/profile.component';
 import { EditProfileComponent } from 'src/app/main-components/edit-profile/edit-profile.component';
+import { EditStrikeComponent } from './components/edit-strike/edit-strike.component';
 
 const routes: Routes = [
   { path: 'inicio', component: AdminDashboardComponent },
   { path: 'marchas', component: TableStrikesComponent },
   { path: 'perfil', component: ProfileComponent },
   { path: 'editar-perfil', component: EditProfileComponent },
+  { path: 'editar-marcha', component: EditStrikeComponent },
 ];
 
 @NgModule({
