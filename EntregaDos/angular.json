@@ -64,6 +64,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/i18ntranslate",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -75,6 +83,9 @@
           "configurations": {
             "production": {
               "browserTarget": "EntregaDos:build:production"
+            },
+            "en": {
+              "browserTarget": "EntregaDos:build:en"
             }
           }
         },
