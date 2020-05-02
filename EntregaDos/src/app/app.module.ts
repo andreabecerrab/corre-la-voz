@@ -17,6 +17,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserSidebarComponent } from './main-components/user-sidebar/user-sidebar.component';
 import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeMX from '@angular/common/locales/es-MX';
+import localeUS from '@angular/common/locales/en';
+
+
+registerLocaleData(localeMX, 'es-149');
+registerLocaleData(localeUS, 'en');
+
 @NgModule({
   declarations: [
     HeaderComponent,
