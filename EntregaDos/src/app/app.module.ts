@@ -16,6 +16,8 @@ import { AdminModule } from './modules/admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UserSidebarComponent } from './main-components/user-sidebar/user-sidebar.component';
 import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
+//Services
+import { TweetsService } from './services/tweets.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { EditProfileComponent } from './main-components/edit-profile/edit-profil
     AppRoutingModule,
   ],
   exports: [ProfileComponent],
+  providers: [TweetsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
