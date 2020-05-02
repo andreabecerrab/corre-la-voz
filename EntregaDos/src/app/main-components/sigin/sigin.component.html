@@ -1,21 +1,21 @@
 <div class="main-container">
   <div class="logs">
     <div class="app-sign-col">
-      <h2>Registro</h2>
+      <h2 i18n="@@signin">Registro</h2>
       <form action="login.html">
         <div class="form-row">
           <div class="op-form-md">
-            <label>Nombre</label>
+            <label i18n="@@name">Nombre</label>
             <input type="text" class="op-form-control" />
           </div>
           <div class="op-form-md">
-            <label>Apellido</label>
+            <label i18n="@@lastName">Apellido</label>
             <input type="text" class="op-form-control" />
           </div>
         </div>
         <div class="form-row">
           <div class="op-form-md">
-            <label>Correo</label>
+            <label i18n="@@email">Correo</label>
             <input
               type="email"
               class="op-form-control"
@@ -23,7 +23,7 @@
             />
           </div>
           <div class="op-form-md">
-            <label>Contraseña</label>
+            <label i18n="@@password">Contraseña</label>
             <input type="password" class="op-form-control" />
           </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="form-group">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label">
+            <label class="form-check-label" i18n="@@termsConditions">
               Acepto términos y condiciones
             </label>
           </div>
@@ -41,6 +41,7 @@
           class="ln-btn"
           routerLink="/login"
           routerLinkActive="class1"
+          i18n="@@signin"
         >
           Registrar
         </button>
