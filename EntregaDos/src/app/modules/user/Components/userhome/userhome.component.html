@@ -2,9 +2,32 @@
   <div class="tab-pane show active index-page">
     <h2>Marchas</h2>
     <!-- MAIN-->
-    <div class="section-style">
+    <div class="section-style" *ngFor="let strike of strikes" >
       <!-- SINGLE-->
-      <app-card></app-card>
+      <div class="card">
+        <img
+          class="img card-img-top"
+          src="/assets/img/cover.jpg"
+          alt="Card image
+        cap"
+        />
+        <!-- CONTENT CARD-->
+        <div class="card-body">
+          <h5>
+            <a
+              class="fade"
+              routerLink="/usuario/marcha"
+              routerLinkActive="class1"
+              id="namestrike"
+              >{{ strike.nombre }}</a
+            >
+          </h5>
+          <p class="card-text">
+            {{ strike.fecha }}
+          </p>
+          <app-toast></app-toast>
+        </div>
+      </div>
     </div>
   </div>
 </div>

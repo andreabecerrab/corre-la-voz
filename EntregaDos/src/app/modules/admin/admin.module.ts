@@ -5,6 +5,7 @@ import { TableStrikesComponent } from './components/table-strikes/table-strikes.
 import { AdminRoutingModule } from './admin-routing.module';
 import { EditStrikeComponent } from './components/edit-strike/edit-strike.component';
 
+
 @NgModule({
   declarations: [AdminDashboardComponent, TableStrikesComponent, EditStrikeComponent],
   imports: [CommonModule, AdminRoutingModule],

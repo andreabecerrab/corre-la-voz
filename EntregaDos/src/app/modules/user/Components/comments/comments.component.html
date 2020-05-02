@@ -5,13 +5,13 @@
                
                     <h2>Comentarios</h2>
                     <div class="panel-body">
-                        <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
+                        <textarea class="form-control" placeholder="write a comment..." rows="3" [(ngModel)]="comentario.contenido"></textarea>
                         <br>
-                        <button type="button" class="my-btn">Post</button>
+                        <button type="button" class="my-btn" (click)=" onClickMe()">Post</button>
                         <div class="clearfix"></div>
                         <hr>
                         <ul class="media-list">
-                            <li class="tw-card">
+                            <li class="tw-card" *ngIf="mostrardatos">
                                 <div class="tw-profile">
                                     <p class="tw-name">{{nombre}}</p>
                                     <p class="tw-handle">{{handle}}</p>

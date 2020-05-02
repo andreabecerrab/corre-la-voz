@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './components/card/card.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { CarrusselComponent } from './components/carrussel/carrussel.component';
 import { ContentMapaComponent } from './components/content-mapa/content-mapa.component';
@@ -17,6 +17,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
 
+
 @NgModule({
   declarations: [
     ToastComponent,
@@ -32,9 +33,9 @@ import { UserRoutingModule } from './user-routing.module';
     TwCardComponent,
     UserhomeComponent,
     CommentsComponent,
-    CardComponent,
+    
   ],
   exports: [UserhomeComponent, ResourcesComponent],
-  imports: [CommonModule, UserRoutingModule],
+  imports: [CommonModule,FormsModule, UserRoutingModule],
 })
 export class UserModule {}

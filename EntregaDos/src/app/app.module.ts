@@ -16,6 +16,7 @@ import { AdminModule } from './modules/admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UserSidebarComponent } from './main-components/user-sidebar/user-sidebar.component';
 import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
+import {MarchaServiceService} from './services/marcha-service.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EditProfileComponent } from './main-components/edit-profile/edit-profil
     ProfileComponent,
     UserSidebarComponent,
     EditProfileComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,10 @@ import { EditProfileComponent } from './main-components/edit-profile/edit-profil
     UserModule,
     AdminModule,
     AppRoutingModule,
+   
   ],
   exports: [ProfileComponent],
+  providers: [MarchaServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
