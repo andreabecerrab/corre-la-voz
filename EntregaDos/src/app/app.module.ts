@@ -18,6 +18,14 @@ import { UserSidebarComponent } from './main-components/user-sidebar/user-sideba
 import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
 import {MarchaServiceService} from './services/marcha-service.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeMX from '@angular/common/locales/es-MX';
+import localeUS from '@angular/common/locales/en';
+
+
+registerLocaleData(localeMX, 'es-149');
+registerLocaleData(localeUS, 'en');
+
 @NgModule({
   declarations: [
     HeaderComponent,
