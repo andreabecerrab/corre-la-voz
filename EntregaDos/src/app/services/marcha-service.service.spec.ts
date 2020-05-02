@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MarchaServiceService } from './admin-service.service';
+import { MarchaServiceService } from './marcha-service.service';
 
 describe('MarchaServiceService', () => {
   let service:MarchaServiceService;
