@@ -3,10 +3,12 @@
     <!-- STRIKE CONTENT-->
     <div class="other-section section-single-style">
       <div class="strike-content">
-        <app-content-descripcion-marcharchas></app-content-descripcion-marcharchas>
+        <app-content-descripcion-marcharchas
+          [strike]="strike"
+        ></app-content-descripcion-marcharchas>
         <app-carrussel></app-carrussel>
         <app-content-mapa class="map-section"></app-content-mapa>
-        <app-comments></app-comments>
+        <app-comments [comentarios]="comentarios"></app-comments>
       </div>
       <app-twitter class="twitter tw-sidebar"></app-twitter>
     </div>

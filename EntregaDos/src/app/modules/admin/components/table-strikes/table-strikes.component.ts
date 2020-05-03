@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Marcha } from 'src/app/models/Marcha';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
 
 @Component({
@@ -6,13 +7,21 @@ import { MarchaServiceService } from 'src/app/services/marcha-service.service';
   templateUrl: './table-strikes.component.html',
 })
 export class TableStrikesComponent implements OnInit {
- strikes=[];
-  constructor(private _adminServices: MarchaServiceService) {
-  
-   
-  }
+  strikes = [];
+  selectedDelete: number = -1;
+  selectedEdit: Marcha;
 
-  ngOnInit(){
-    this.strikes=this._adminServices.getMarchas();
+  constructor(private _marchaServices: MarchaServiceService) {}
+  ngOnInit() {
+    this.strikes = this._marchaServices.getMarchas();
+  }
+  delete(id) {
+    this.selectedDelete = id;
+  }
+  confirmDelete() {
+    this._marchaServices.deleteMarcha(this.selectedDelete);
+  }
+  edit(strike) {
+    this.selectedEdit = strike;
   }
 }

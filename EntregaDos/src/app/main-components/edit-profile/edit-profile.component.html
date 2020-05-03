@@ -1,22 +1,38 @@
-<div class="tab-content" id="pills-tabContent">
-  <!-- PERFIL-->
-  <div class="tab-pane show active">
-    <h2 i18n="@@profile">Perfil</h2>
-    <div>
-      <h6 i18n="@@name">Nombre</h6>
-      <input type="text" class="card p-data" />
-      <h6 i18n="@@lastName">Apellido</h6>
-      <input type="text" class="card p-data" />
-      <h6 i18n="@@email">Correo</h6>
-      <input type="text" class="card p-data" />
-      <button
-        routerLink="/usuario/perfil"
-        routerLinkActive="class1"
-        class="my-btn"
-        i18n="@@save"
+<!-- Modal for edit profile-->
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle" i18n="@@profile">
+        Editar Perfil
+      </h5>
+
+      <i type="button" data-dismiss="modal" class="material-icons i-alert"
+        >clear</i
       >
-        Guardar
-      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <h6 i18n="@@name">Nombre</h6>
+        <input class="op-form-control profile" />
+        <h6 i18n="@@lastName">Apellido</h6>
+        <input class="op-form-control profile" />
+        <h6 i18n="@@email">Correo</h6>
+        <input class="op-form-control profile" />
+        <h6>Nueva contraseña</h6>
+        <input class="op-form-control profile" />
+        <h6>Confirmar contraseña</h6>
+        <input class="op-form-control profile" />
+
+        <button
+          class="my-btn blue"
+          type="button"
+          data-toggle="modal"
+          data-target="#edit-profile"
+          i18n="@@save"
+        >
+          Guardar cambios
+        </button>
+      </form>
     </div>
   </div>
 </div>

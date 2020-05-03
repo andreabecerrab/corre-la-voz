@@ -2,7 +2,6 @@
   <div class="tab-pane show active">
     <h2 i18n="@@strikes">Marchas</h2>
     <!-- TABLE-->
-
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -23,15 +22,56 @@
             <a
               ><i
                 class="material-icons md-dark"
-                routerLink="/admin/editar-marcha"
-                routerLinkActive="class1"
+                type="button"
+                data-toggle="modal"
+                data-target="#edit"
+                (click)="edit(strike)"
                 >create</i
               ></a
             >
-            <a><i class="material-icons md-dark">delete</i></a>
+            <a
+              ><i
+                class="material-icons md-dark"
+                type="button"
+                data-toggle="modal"
+                data-target="#confirm"
+                (click)="delete(strike.id)"
+                >delete</i
+              ></a
+            >
           </td>
         </tr>
       </tbody>
     </table>
+    <!-- Modal for delete-->
+    <div class="modal fade" id="confirm">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            ¿ Desea borrar esa marcha ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="my-btn" data-dismiss="modal">
+              Cerrar
+            </button>
+            <button
+              type="button"
+              id="continue"
+              class="my-btn blue"
+              data-dismiss="modal"
+              (click)="confirmDelete()"
+            >
+              Borrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-edit-strike
+      *ngIf="selectedEdit"
+      class="modal fade"
+      id="edit"
+      [selectedEdit]="selectedEdit"
+    ></app-edit-strike>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
 
 @Component({
@@ -6,11 +6,16 @@ import { MarchaServiceService } from 'src/app/services/marcha-service.service';
   templateUrl: './userhome.component.html',
 })
 export class UserhomeComponent implements OnInit {
-  strikes=[];
-  constructor(private _adminServices: MarchaServiceService) {}
+  strikes = [];
+  id: number;
+  constructor(private _marchasServices: MarchaServiceService) {}
 
-  ngOnInit(){
-    this.strikes=this._adminServices.getMarchas();
+  ngOnInit() {
+    this.strikes = this._marchasServices.getMarchas();
+    // this._marchasServices.singleM.subscribe((id) => (this.id = id));
   }
-  
+
+  // selectMarcha() {
+  //   this._marchasServices.changetMarcha;
+  // }
 }

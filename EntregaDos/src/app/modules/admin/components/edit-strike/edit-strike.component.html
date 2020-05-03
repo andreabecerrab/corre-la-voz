@@ -1,56 +1,150 @@
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane show active index-page">
-    <h2 i18n="@@editStrike">Editar marcha</h2>
-    <!-- ADD-->
-    <form>
-      <div class="form-row">
-        <div class="op-form-md">
-          <label i18n="@@name">Nombre</label>
-          <input type="text" class="op-form-control" />
-        </div>
-        <div class="op-form-md">
-          <label i18n="@@date">Fecha</label>
-          <input type="date" class="op-form-control" />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="op-form-md">
-          <label i18n="@@desc">Descripción</label>
-          <input type="text" class="op-form-control" />
-        </div>
-        <div class="op-form-md">
-          <label>#hashtag</label>
-          <input type="text" class="op-form-control" />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="op-form-md">
-          <label i18n="@@startAddress">Dirección incio</label>
-          <input
-            type="text"
-            class="op-form-control"
-            placeholder="Av. anibeuhoiw"
-          />
-        </div>
-        <div class="op-form-md">
-          <label i18n="@@endAddress">Dirección fin</label>
-          <input
-            type="text"
-            class="op-form-control"
-            placeholder="Av. anibeuhoiw"
-          />
-        </div>
-      </div>
-      <label class="file" i18n="@@addImage">Agregar imagen<input type="file" /></label>
-      <button
-        type="submit"
-        class="my-btn"
-        routerLink="/admin/marchas"
-        routerLinkActive="class1"
-        i18n="@@save"
+<!-- Modal for edit-->
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLongTitle" i18n="@@editStrike">
+        Editar Marcha
+      </h2>
+
+      <i type="button" data-dismiss="modal" class="material-icons i-alert"
+        >clear</i
       >
-        Guardar
-      </button>
-    </form>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="marchaEditForm">
+        <div class="form-row">
+          <div class="op-form-md">
+            <div class="alert-inputs">
+              <label i18n="@@name">Nombre</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['nombre'].invalid &&
+                  marchaEditForm.controls['nombre'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <input
+              type="text"
+              class="op-form-control"
+              formControlName="nombre"
+              placeholder="{{ selectedEdit.nombre }}"
+            />
+          </div>
+          <div class="op-form-md">
+            <label i18n="@@date">Fecha</label>
+            <input
+              type="date"
+              class="op-form-control"
+              formControlName="fecha"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="op-form-md">
+            <div class="alert-inputs">
+              <label>Hashtag</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['hashtag'].invalid &&
+                  marchaEditForm.controls['hashtag'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <input
+              type="text"
+              class="op-form-control"
+              formControlName="hashtag"
+              placeholder="{{ selectedEdit.hashtag }}"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="op-form-md">
+            <div class="alert-inputs">
+              <label i18n="@@startAddress">Dirección incio</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['direccion'].invalid &&
+                  marchaEditForm.controls['direccion'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <input
+              type="text"
+              class="op-form-control"
+              placeholder="Av. anibeuhoiw"
+              formControlName="direccion"
+              placeholder="{{ selectedEdit.direccion }}"
+            />
+          </div>
+          <!-- <div class="op-form-md">
+        <label i18n="@@endAddress">Dirección fin</label>
+          <input
+            type="text"
+            class="op-form-control"
+            placeholder="Av. anibeuhoiw"
+          />
+        </div> -->
+        </div>
+        <div class="form-row" style="margin-bottom: 2rem;">
+          <div class="col-12" style="padding: 15px;">
+            <div class="alert-inputs">
+              <label i18n="@@desc">Descripción</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['desc'].invalid &&
+                  marchaEditForm.controls['desc'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <textarea
+              type="text"
+              class="op-form-control"
+              formControlName="desc"
+              placeholder="{{ selectedEdit.descripcion }}"
+            ></textarea>
+          </div>
+        </div>
+        <!-- <label class="file">Agregar imagen<input type="file" /></label> -->
+        <img src="{{ selectedEdit.img }}" />
+        <div class="form-group">
+          <label for="exampleFormControlFile1" i18n="@@addImage"
+            >Agregar imagen</label
+          >
+          <input
+            type="file"
+            class="form-control-file"
+            id="exampleFormControlFile1"
+            formControlName="img"
+          />
+        </div>
+        <div class="alert-inputs">
+          <button
+            type="submit"
+            class="my-btn blue"
+            [disabled]="marchaEditForm.pristine || marchaEditForm.invalid"
+            data-dismiss="modal"
+            (click)="edit()"
+            id="edited"
+            i18n="@@save"
+          >
+            Guardar
+          </button>
+          <div class="toast fade hide">
+            <div class="toast-body">
+              <p>Edición exitosa!</p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
