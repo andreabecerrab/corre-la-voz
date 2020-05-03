@@ -25,6 +25,8 @@ import localeUS from '@angular/common/locales/en';
 
 registerLocaleData(localeMX, 'es-149');
 registerLocaleData(localeUS, 'en');
+//Services
+import { TweetsService } from './services/tweets.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,11 @@ registerLocaleData(localeUS, 'en');
    
   ],
   exports: [ProfileComponent],
+<<<<<<< HEAD
   providers: [MarchaServiceService],
+=======
+  providers: [TweetsService],
+>>>>>>> dependencies
   bootstrap: [AppComponent],
 })
 export class AppModule {}
