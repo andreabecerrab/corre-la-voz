@@ -2,49 +2,131 @@
   <div class="tab-pane show active index-page">
     <h2>Agregar marcha</h2>
     <!-- ADD-->
-    <form>
+    <form [formGroup]="marchaForm" (ngSubmit)="post()">
       <div class="form-row">
         <div class="op-form-md">
-          <label>Nombre</label>
-          <input type="text" class="op-form-control" />
+          <div class="alert-inputs">
+            <label>Nombre</label>
+            <i
+              *ngIf="
+                marchaForm.controls['nombre'].invalid &&
+                (marchaForm.controls['nombre'].dirty ||
+                  marchaForm.controls['nombre'].touched)
+              "
+              class="material-icons i-alert"
+              >error</i
+            >
+          </div>
+          <input
+            type="text"
+            class="op-form-control"
+            formControlName="nombre"
+            required
+          />
         </div>
         <div class="op-form-md">
           <label>Fecha</label>
-          <input type="date" class="op-form-control" />
+          <input
+            type="date"
+            class="op-form-control"
+            formControlName="fecha"
+            required
+          />
         </div>
       </div>
       <div class="form-row">
         <div class="op-form-md">
-          <label>Descripción</label>
-          <input type="text" class="op-form-control" />
-        </div>
-        <div class="op-form-md">
-          <label>#hashtag</label>
-          <input type="text" class="op-form-control" />
+          <div class="alert-inputs">
+            <label>Hashtag</label>
+            <i
+              *ngIf="
+                marchaForm.controls['hashtag'].invalid &&
+                (marchaForm.controls['hashtag'].dirty ||
+                  marchaForm.controls['hashtag'].touched)
+              "
+              class="material-icons i-alert"
+              >error</i
+            >
+          </div>
+          <input
+            type="text"
+            class="op-form-control"
+            formControlName="hashtag"
+            required
+          />
         </div>
       </div>
       <div class="form-row">
         <div class="op-form-md">
-          <label>Dirección incio</label>
+          <div class="alert-inputs">
+            <label>Dirección</label>
+            <i
+              *ngIf="
+                marchaForm.controls['direccion'].invalid &&
+                (marchaForm.controls['direccion'].dirty ||
+                  marchaForm.controls['direccion'].touched)
+              "
+              class="material-icons i-alert"
+              >error</i
+            >
+          </div>
           <input
             type="text"
             class="op-form-control"
             placeholder="Av. anibeuhoiw"
+            formControlName="direccion"
+            required
           />
         </div>
-        <div class="op-form-md">
+        <!-- <div class="op-form-md">
           <label>Dirección fin</label>
           <input
             type="text"
             class="op-form-control"
             placeholder="Av. anibeuhoiw"
           />
+        </div> -->
+      </div>
+      <div class="form-row" style="margin-bottom: 2rem;">
+        <div class="col-12" style="padding: 15px;">
+          <div class="alert-inputs">
+            <label>Descripción</label>
+            <i
+              *ngIf="
+                marchaForm.controls['desc'].invalid &&
+                (marchaForm.controls['desc'].dirty ||
+                  marchaForm.controls['desc'].touched)
+              "
+              class="material-icons i-alert"
+              >error</i
+            >
+          </div>
+          <textarea
+            type="text"
+            class="op-form-control"
+            formControlName="desc"
+            required
+          ></textarea>
         </div>
       </div>
 
-      <label class="file">Agregar imagen<input type="file" /></label>
-
-      <button type="submit" class="my-btn">Agregar</button>
+      <!-- <label class="file">Agregar imagen<input type="file" /></label> -->
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Agregar imagen</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="exampleFormControlFile1"
+          formControlName="img"
+        />
+      </div>
+      <button
+        type="submit"
+        class="my-btn"
+        [disabled]="marchaForm.pristine || marchaForm.invalid"
+      >
+        Agregar
+      </button>
     </form>
   </div>
 </div>

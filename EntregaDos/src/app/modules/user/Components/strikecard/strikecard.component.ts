@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Marcha } from 'src/app/models/Marcha';
 
 @Component({
-  selector: 'app-content-descripcion-marcharchas',
-  templateUrl: './content-descripcion-marcharchas.component.html',
+  selector: 'app-strikecard',
+  templateUrl: './strikecard.component.html',
 })
-export class ContentDescripcionMarcharchasComponent implements OnInit {
+export class StrikecardComponent implements OnInit {
   @Input() strike: Marcha;
 
   constructor() {}

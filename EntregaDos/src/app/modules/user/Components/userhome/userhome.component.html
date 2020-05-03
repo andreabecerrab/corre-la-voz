@@ -2,12 +2,12 @@
   <div class="tab-pane show active index-page">
     <h2>Marchas</h2>
     <!-- MAIN-->
-    <div class="section-style" *ngFor="let strike of strikes" >
+    <div class="section-style">
       <!-- SINGLE-->
-      <div class="card">
+      <div class="card" *ngFor="let strike of strikes">
         <img
           class="img card-img-top"
-          src="/assets/img/cover.jpg"
+          src="{{ strike.img }}"
           alt="Card image
         cap"
         />
@@ -25,7 +25,6 @@
           <p class="card-text">
             {{ strike.fecha }}
           </p>
-          <app-toast></app-toast>
         </div>
       </div>
     </div>

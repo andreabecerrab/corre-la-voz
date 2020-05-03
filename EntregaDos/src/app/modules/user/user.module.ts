@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ToastComponent } from './components/toast/toast.component';
 import { CarrusselComponent } from './components/carrussel/carrussel.component';
 import { ContentMapaComponent } from './components/content-mapa/content-mapa.component';
 import { MapaComponent } from './components/mapa/mapa.component';
@@ -16,11 +15,10 @@ import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
-
+import { StrikecardComponent } from './components/strikecard/strikecard.component';
 
 @NgModule({
   declarations: [
-    ToastComponent,
     CarrusselComponent,
     ContentMapaComponent,
     MapaComponent,
@@ -33,9 +31,9 @@ import { UserRoutingModule } from './user-routing.module';
     TwCardComponent,
     UserhomeComponent,
     CommentsComponent,
-    
+    StrikecardComponent,
   ],
   exports: [UserhomeComponent, ResourcesComponent],
-  imports: [CommonModule,FormsModule, UserRoutingModule],
+  imports: [CommonModule, FormsModule, UserRoutingModule],
 })
 export class UserModule {}

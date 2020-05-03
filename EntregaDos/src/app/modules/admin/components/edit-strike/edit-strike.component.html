@@ -1,55 +1,145 @@
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane show active index-page">
-    <h2>Editar marcha</h2>
-    <!-- ADD-->
-    <form>
-      <div class="form-row">
-        <div class="op-form-md">
-          <label>Nombre</label>
-          <input type="text" class="op-form-control" />
+<!-- Modal for edit-->
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Editar Marcha</h5>
+
+      <i type="button" data-dismiss="modal" class="material-icons i-alert"
+        >clear</i
+      >
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="marchaEditForm">
+        <div class="form-row">
+          <div class="op-form-md">
+            <div class="alert-inputs">
+              <label>Nombre</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['nombre'].invalid &&
+                  marchaEditForm.controls['nombre'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <input
+              type="text"
+              class="op-form-control"
+              formControlName="nombre"
+              placeholder="{{ selectedEdit.nombre }}"
+            />
+          </div>
+          <div class="op-form-md">
+            <label>Fecha</label>
+            <input
+              type="date"
+              class="op-form-control"
+              formControlName="fecha"
+            />
+          </div>
         </div>
-        <div class="op-form-md">
-          <label>Fecha</label>
-          <input type="date" class="op-form-control" />
+        <div class="form-row">
+          <div class="op-form-md">
+            <div class="alert-inputs">
+              <label>Hashtag</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['hashtag'].invalid &&
+                  marchaEditForm.controls['hashtag'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <input
+              type="text"
+              class="op-form-control"
+              formControlName="hashtag"
+              placeholder="{{ selectedEdit.hashtag }}"
+            />
+          </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="op-form-md">
-          <label>Descripción</label>
-          <input type="text" class="op-form-control" />
-        </div>
-        <div class="op-form-md">
-          <label>#hashtag</label>
-          <input type="text" class="op-form-control" />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="op-form-md">
-          <label>Dirección incio</label>
-          <input
-            type="text"
-            class="op-form-control"
-            placeholder="Av. anibeuhoiw"
-          />
-        </div>
-        <div class="op-form-md">
+        <div class="form-row">
+          <div class="op-form-md">
+            <div class="alert-inputs">
+              <label>Dirección</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['direccion'].invalid &&
+                  marchaEditForm.controls['direccion'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <input
+              type="text"
+              class="op-form-control"
+              placeholder="Av. anibeuhoiw"
+              formControlName="direccion"
+              placeholder="{{ selectedEdit.direccion }}"
+            />
+          </div>
+          <!-- <div class="op-form-md">
           <label>Dirección fin</label>
           <input
             type="text"
             class="op-form-control"
             placeholder="Av. anibeuhoiw"
           />
+        </div> -->
         </div>
-      </div>
-      <label class="file">Agregar imagen<input type="file" /></label>
-      <button
-        type="submit"
-        class="my-btn"
-        routerLink="/admin/marchas"
-        routerLinkActive="class1"
-      >
-        Guardar
-      </button>
-    </form>
+        <div class="form-row" style="margin-bottom: 2rem;">
+          <div class="col-12" style="padding: 15px;">
+            <div class="alert-inputs">
+              <label>Descripción</label>
+              <i
+                *ngIf="
+                  marchaEditForm.controls['desc'].invalid &&
+                  marchaEditForm.controls['desc'].dirty
+                "
+                class="material-icons i-alert"
+                >error</i
+              >
+            </div>
+            <textarea
+              type="text"
+              class="op-form-control"
+              formControlName="desc"
+              placeholder="{{ selectedEdit.descripcion }}"
+            ></textarea>
+          </div>
+        </div>
+        <!-- <label class="file">Agregar imagen<input type="file" /></label> -->
+        <img src="{{ selectedEdit.img }}" />
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Agregar imagen</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="exampleFormControlFile1"
+            formControlName="img"
+          />
+        </div>
+        <div class="alert-inputs">
+          <button
+            type="submit"
+            class="my-btn blue"
+            [disabled]="marchaEditForm.pristine || marchaEditForm.invalid"
+            data-dismiss="modal"
+            (click)="edit()"
+            id="edited"
+          >
+            Guardar
+          </button>
+          <div class="toast fade hide">
+            <div class="toast-body">
+              <p>Edición exitosa!</p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

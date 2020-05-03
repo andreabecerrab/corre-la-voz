@@ -4,20 +4,22 @@
     <h2>Perfil</h2>
     <div>
       <h6>Nombre</h6>
-      <div class="card p-data">{{ nombreUsuario }}</div>
+      <div class="op-form-control profile">{{ nombreUsuario }}</div>
       <h6>Apellido</h6>
-      <div class="card p-data">{{ apellidoU }}</div>
+      <div class="op-form-control profile">{{ apellidoU }}</div>
       <h6>Correo</h6>
-      <div class="card p-data">{{ emailU }}</div>
+      <div class="op-form-control profile">{{ emailU }}</div>
       <h6>ID</h6>
-      <div class="card p-data">{{ idUsuario }}</div>
+      <div class="op-form-control profile">{{ idUsuario }}</div>
       <button
-        routerLink="/usuario/editar-perfil"
-        routerLinkActive="class1"
         class="my-btn"
+        type="button"
+        data-toggle="modal"
+        data-target="#edit-profile"
       >
         Editar
       </button>
     </div>
   </div>
+  <app-edit-profile class="modal fade" id="edit-profile"></app-edit-profile>
 </div>

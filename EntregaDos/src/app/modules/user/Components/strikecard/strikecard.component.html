@@ -1,0 +1,23 @@
+<div class="card">
+  <img
+    class="img card-img-top"
+    src="{{ strike.img }}"
+    alt="Card image
+        cap"
+  />
+  <!-- CONTENT CARD-->
+  <div class="card-body">
+    <h5>
+      <a
+        class="fade"
+        routerLink="/usuario/marcha"
+        routerLinkActive="class1"
+        id="namestrike"
+        >{{ strike.nombre }}</a
+      >
+    </h5>
+    <p class="card-text">
+      {{ strike.fecha }}
+    </p>
+  </div>
+</div>

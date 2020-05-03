@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
   title = 'EntregaDos';
-  userlogin: boolean = true;
-  adminlogin: boolean = false;
+  userlogin: boolean = false;
+  adminlogin: boolean = true;
 }
