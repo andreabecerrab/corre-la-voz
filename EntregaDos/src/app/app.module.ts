@@ -16,12 +16,11 @@ import { AdminModule } from './modules/admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UserSidebarComponent } from './main-components/user-sidebar/user-sidebar.component';
 import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
-import {MarchaServiceService} from './services/marcha-service.service';
+import { MarchaServiceService } from './services/marcha-service.service';
 
 import { registerLocaleData } from '@angular/common';
 import localeMX from '@angular/common/locales/es-MX';
 import localeUS from '@angular/common/locales/en';
-
 
 registerLocaleData(localeMX, 'es-149');
 registerLocaleData(localeUS, 'en');
@@ -39,7 +38,6 @@ import { TweetsService } from './services/tweets.service';
     ProfileComponent,
     UserSidebarComponent,
     EditProfileComponent,
-   
   ],
   imports: [
     BrowserModule,
@@ -47,14 +45,10 @@ import { TweetsService } from './services/tweets.service';
     UserModule,
     AdminModule,
     AppRoutingModule,
-   
   ],
   exports: [ProfileComponent],
-<<<<<<< HEAD
-  providers: [MarchaServiceService],
-=======
-  providers: [TweetsService],
->>>>>>> dependencies
+  providers: [MarchaServiceService, TweetsService],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
