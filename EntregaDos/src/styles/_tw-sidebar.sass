@@ -3,14 +3,21 @@
     margin: 0
     align-self: center
 .tw-sidebar
-    width: 25%
+    width: 20%
+    position: fixed
+    right: 10px
 .tw-header
     justify-content: start
-    padding: 15px
+    padding: 5px
 .tweets
     display: flex
     flex-direction: column
+    overflow: auto !important
+    position: fixed
+    height: 70%
+    width: 20%
 .tw-card 
+    border-radius: 0.5rem
     padding: 1rem
     width: 100%
     .tw-light, .tw-handle
@@ -24,9 +31,21 @@
         @include align-letters
     p
         margin-bottom: 0
-
-        
+   
 .material-icons.md-18
     font-size: 18px
     color: $light-icons
     
+@include large
+    .tweets
+        width: 33%
+@include tablet
+    .tw-sidebar, .tweets
+        position: inherit
+    .tweets
+        width: 80%
+        height: 25rem
+        margin-bottom: 5rem
+@include mobile
+    .tweets
+        width: 95%

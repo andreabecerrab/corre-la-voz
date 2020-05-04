@@ -4,9 +4,9 @@
   <h2 i18n="@@trend">Tendencias</h2>
 </div>
 <!-- display de tweets -->
-<div class="tweets" *ngFor="let tweet of tweets">
+<div class="tweets">
   <!-- tweet -->
-  <div class="tw-card">
+  <div class="tw-card" *ngFor="let tweet of tweets">
     <div class="tw-profile">
       <p class="tw-name">{{ tweet.name }}</p>
       <p class="tw-handle">{{ tweet.handle }}</p>
