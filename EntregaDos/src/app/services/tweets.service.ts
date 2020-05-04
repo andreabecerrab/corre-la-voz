@@ -30,7 +30,7 @@ export class TweetsService {
         handle: '@alex',
         content: 'Contenido del tweet',
         date: '13/03/2020',
-        rt: 20,
+        rt: 5,
         likes: 2,
       },
       {
@@ -38,7 +38,7 @@ export class TweetsService {
         handle: '@josesin',
         content: 'Contenido del tweet',
         date: '13/03/2020',
-        rt: 20,
+        rt: 202,
         likes: 2,
       },
       {
@@ -46,7 +46,7 @@ export class TweetsService {
         handle: '@andrea',
         content: 'Contenido del tweet',
         date: '13/03/2020',
-        rt: 20,
+        rt: 80,
         likes: 2,
       },
       {
@@ -62,7 +62,7 @@ export class TweetsService {
         handle: '@alex',
         content: 'Contenido del tweet',
         date: '13/03/2020',
-        rt: 20,
+        rt: 50,
         likes: 2,
       },
       {
