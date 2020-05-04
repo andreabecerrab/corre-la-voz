@@ -17,9 +17,13 @@
     height: 70%
     width: 20%
 .tw-card 
+    border-width: thick
+    border-style: solid
+    border-color: $pastel-blue
     border-radius: 0.5rem
     padding: 1rem
     width: 100%
+.tw-card , .comment-card
     .tw-light, .tw-handle
         color: $light-font
         font-size: 14px
@@ -49,3 +53,5 @@
 @include mobile
     .tweets
         width: 95%
+    .tw-header
+        padding-left: 15px
