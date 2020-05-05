@@ -6,6 +6,7 @@ import { TableStrikesComponent } from './components/table-strikes/table-strikes.
 import { ProfileComponent } from '../../main-components/profile/profile.component';
 import { EditProfileComponent } from 'src/app/main-components/edit-profile/edit-profile.component';
 import { EditStrikeComponent } from './components/edit-strike/edit-strike.component';
+import { AdminGraphsComponent } from './components/admin-graphs/admin-graphs.component'
 
 const routes: Routes = [
   { path: 'inicio', component: AdminDashboardComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'perfil', component: ProfileComponent },
   { path: 'editar-perfil', component: EditProfileComponent },
   { path: 'editar-marcha', component: EditStrikeComponent },
+  { path: 'info', component: AdminGraphsComponent },
 ];
 
 @NgModule({
