@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ChartsModule } from 'ng2-charts';
 //main components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
@@ -45,6 +46,7 @@ import { TweetsService } from './services/tweets.service';
     UserModule,
     AdminModule,
     AppRoutingModule,
+    ChartsModule
   ],
   exports: [ProfileComponent],
   providers: [MarchaServiceService, TweetsService],
