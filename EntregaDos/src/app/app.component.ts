@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EntregaDos';
-  userlogin: boolean = false;
-  adminlogin: boolean = true;
+  userlogin: boolean = true;
+  adminlogin: boolean = false;
 }
