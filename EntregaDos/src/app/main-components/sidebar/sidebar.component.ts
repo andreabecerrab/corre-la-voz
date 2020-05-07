@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 declare const fullHeight: any;
 
 @Component({
@@ -9,7 +8,7 @@ declare const fullHeight: any;
   
 })
 export class SidebarComponent implements OnInit {
-  isOpen=true;
+ 
 
   constructor() {}
 

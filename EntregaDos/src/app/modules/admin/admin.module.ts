@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChartsModule } from 'ng2-charts';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { TableStrikesComponent } from './components/table-strikes/table-strikes.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { EditStrikeComponent } from './components/edit-strike/edit-strike.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminGraphComponent } from './components/admin-graph/admin-graph.component';
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     TableStrikesComponent,
     EditStrikeComponent,
+    AdminGraphComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule, ChartsModule],
   exports: [AdminDashboardComponent, TableStrikesComponent],
 })
 export class AdminModule {}

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
+import { ChartsModule } from 'ng2-charts';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //main components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
@@ -48,7 +50,9 @@ import { TweetsService } from './services/tweets.service';
     AdminModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-   
+    ChartsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [ProfileComponent],
   providers: [MarchaServiceService, TweetsService],
@@ -56,5 +60,5 @@ import { TweetsService } from './services/tweets.service';
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  
+
 }
