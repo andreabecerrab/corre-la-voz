@@ -111,19 +111,15 @@
         </context-group>
       </trans-unit>
       <trans-unit id="addImage" datatype="html">
-        <source>Agregar imagen<x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/></source>
-        <target>Add image<x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/></target>
+        <source>Agregar imagen</source>
+        <target>Add Image</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/user/components/carrussel/carrussel.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">114</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">118</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add" datatype="html">
@@ -147,8 +143,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="edit" datatype="html">
-        <source>editar</source>
-        <target>edit</target>
+        <source>Editar</source>
+        <target>Edit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/table-strikes/table-strikes.component.html</context>
           <context context-type="linenumber">13</context>

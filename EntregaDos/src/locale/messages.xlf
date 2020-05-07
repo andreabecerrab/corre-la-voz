@@ -28,11 +28,11 @@
         <source>Nombre</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/table-strikes/table-strikes.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/sigin/sigin.component.html</context>
@@ -44,85 +44,68 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/edit-profile/edit-profile.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="date" datatype="html">
         <source>Fecha</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/table-strikes/table-strikes.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="desc" datatype="html">
-        <source>Descripción</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="startAddress" datatype="html">
         <source>Dirección incio</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">62</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="endAddress" datatype="html">
-        <source>Dirección fin</source>
+      <trans-unit id="desc" datatype="html">
+        <source>Descripción</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="addImage" datatype="html">
-        <source>Agregar imagen<x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/></source>
+        <source>Agregar imagen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/user/components/carrussel/carrussel.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">114</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">118</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add" datatype="html">
-        <source>Agregar</source>
+        <source>
+        Agregar
+      </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">127</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/sidebar/sidebar.component.html</context>
@@ -141,7 +124,7 @@
         <source>editar</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/table-strikes/table-strikes.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/sidebar/sidebar.component.html</context>
@@ -149,7 +132,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/profile/profile.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="login" datatype="html">
@@ -160,7 +143,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="email" datatype="html">
@@ -179,18 +162,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/edit-profile/edit-profile.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="password" datatype="html">
         <source>Contraseña</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/login/login.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/sigin/sigin.component.html</context>
@@ -201,7 +180,7 @@
         <source>Registrarse</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/login/login.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/sigin/sigin.component.html</context>
@@ -218,7 +197,7 @@
           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/login/login.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="lastName" datatype="html">
@@ -233,7 +212,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/edit-profile/edit-profile.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="termsConditions" datatype="html">
@@ -261,7 +240,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/edit-profile/edit-profile.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signOut" datatype="html">
@@ -277,15 +256,15 @@
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>
-        Guardar
-      </source>
+          Guardar cambios
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/edit-profile/edit-profile.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">135</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home" datatype="html">
@@ -310,17 +289,6 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="benefits" datatype="html">
-        <source>Beneficios</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/header/header.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/footer/footer.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="members" datatype="html">
         <source>Integrantes</source>
         <context-group purpose="location">
@@ -328,8 +296,8 @@
           <context context-type="linenumber">14</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/footer/footer.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="sourcefile">src/app/modules/landingpage/components/about/about.component.html</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="startNow" datatype="html">
@@ -362,30 +330,14 @@
         <source>¿Quiéres integrar tu marcha?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactUs" datatype="html">
         <source>Contáctanos</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="phone" datatype="html">
-        <source>Teléfono</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="contact" datatype="html">
-        <source>
-          Contactar
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/home/home.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="info" datatype="html">
@@ -439,18 +391,11 @@
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="members" datatype="html">
-        <source>Integrantes</source>
+      <trans-unit id="benefits" datatype="html">
+        <source> Beneficios </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/landingpage/components/about/about.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="success" datatype="html">
-        <source>Exito</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/user/components/toast/toast.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="sourcefile">src/app/modules/landingpage/components/footer/footer.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="trafficPin" datatype="html">
@@ -478,14 +423,16 @@
         <source>Comentarios</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/user/components/comments/comments.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="editStrike" datatype="html">
-        <source>Editar marcha</source>
+        <source>
+        Editar Marcha
+      </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/edit-strike/edit-strike.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
     </body>
