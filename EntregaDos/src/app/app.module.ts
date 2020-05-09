@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //main components
@@ -19,17 +19,15 @@ import { AdminModule } from './modules/admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UserSidebarComponent } from './main-components/user-sidebar/user-sidebar.component';
 import { EditProfileComponent } from './main-components/edit-profile/edit-profile.component';
-import { MarchaServiceService } from './services/marcha-service.service';
-
+//internalization
 import { registerLocaleData } from '@angular/common';
 import localeMX from '@angular/common/locales/es-MX';
 import localeUS from '@angular/common/locales/en';
-
-
 registerLocaleData(localeMX, 'es-149');
 registerLocaleData(localeUS, 'en');
 //Services
 import { TweetsService } from './services/tweets.service';
+import { MarchaServiceService } from './services/marcha-service.service';
 
 @NgModule({
   declarations: [
@@ -52,13 +50,11 @@ import { TweetsService } from './services/tweets.service';
     BrowserAnimationsModule,
     ChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [ProfileComponent],
   providers: [MarchaServiceService, TweetsService],
 
   bootstrap: [AppComponent],
 })
-export class AppModule {
-
-}
+export class AppModule {}
