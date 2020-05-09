@@ -1,28 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 declare const fullHeight: any;
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  
-  
 })
 export class SidebarComponent implements OnInit {
- 
-
-  constructor() {}
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     fullHeight();
   }
-  // onClick(){
-  //   fullHeight();
-  // }
-  
 
- 
-  
+  logout(): void {
+    this.authenticationService.logoutAction();
+  }
 }
-
-
-

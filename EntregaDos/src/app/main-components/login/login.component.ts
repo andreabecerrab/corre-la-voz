@@ -37,6 +37,4 @@ export class LoginComponent implements OnInit {
     let password = this.formData.password.value;
     this.authenticationService.loginAction(user, password);
   }
-
-  //if data submitted and no loginsucess
 }

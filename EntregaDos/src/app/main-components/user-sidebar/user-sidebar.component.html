@@ -1,5 +1,5 @@
 <!-- NAVBAR  -->
-<nav   id="sidebar" class="active">
+<nav id="sidebar" class="active">
   <div class="custom-menu">
     <button type="button" id="sidebarCollapse" class="btn">
       <i class="material-icons md-dark">reorder</i>
@@ -30,7 +30,7 @@
           >
         </li>
         <li class="nav-item">
-          <a routerLink="/login" routerLinkActive="class1" i18n="@@signOut"> Cerrar sesión</a>
+          <a (click)="logout()" i18n="@@signOut"> Cerrar sesión</a>
         </li>
       </ul>
     </div>

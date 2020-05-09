@@ -1,5 +1,5 @@
 <!-- NAVBAR  -->
-<nav  id="sidebar" class="active">
+<nav id="sidebar" class="active">
   <div class="custom-menu">
     <button type="button" id="sidebarCollapse" class="btn">
       <i class="material-icons md-dark">reorder</i>
@@ -11,12 +11,20 @@
     <!-- LINKS  -->
     <ul class="nav" role="tablist">
       <li class="nav-item">
-        <a routerLink="/admin/perfil" routerLinkActive="class1" class="nav-link" i18n="@@profile"
+        <a
+          routerLink="/admin/perfil"
+          routerLinkActive="class1"
+          class="nav-link"
+          i18n="@@profile"
           >Perfil</a
         >
       </li>
       <li class="nav-item">
-        <a routerLink="/admin/inicio" routerLinkActive="class1" class="nav-link" i18n="@@add"
+        <a
+          routerLink="/admin/inicio"
+          routerLinkActive="class1"
+          class="nav-link"
+          i18n="@@add"
           >Agregar</a
         >
       </li>
@@ -39,7 +47,7 @@
         >
       </li>
       <li class="nav-item">
-        <a routerLink="/login" routerLinkActive="class1" class="nav-link" i18n="@@signOut"
+        <a (click)="logout()" class="nav-link" i18n="@@signOut"
           >Cerrar sesión</a
         >
       </li>
