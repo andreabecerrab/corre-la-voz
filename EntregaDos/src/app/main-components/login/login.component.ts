@@ -25,6 +25,13 @@ export class LoginComponent implements OnInit {
       user_email: ['', Validators.required],
       password: ['', Validators.required],
     });
+
+    if (typeof this.authenticationService.sessionData !== 'undefined') {
+      this.authenticationService.loginAction(
+        this.authenticationService.sessionData.user,
+        this.authenticationService.sessionData.password
+      );
+    }
   }
 
   get formData() {

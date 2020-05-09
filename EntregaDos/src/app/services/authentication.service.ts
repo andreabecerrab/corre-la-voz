@@ -30,7 +30,7 @@ export class AuthenticationService {
   //usefullData
   sessionLogin: boolean = false;
   sessionType: string;
-  sessionData: any = '';
+  sessionData: any = this.storage.get('SESSION') || '';
 
   constructor(
     @Inject(LOCAL_STORAGE) private storage: StorageService,
@@ -46,18 +46,24 @@ export class AuthenticationService {
       this.storage.set('SESSION', { user: user_email, pass: password });
       this.sessionData = this.storage.get('SESSION');
 
-      if (this.sessionType === 'admin') {
-        this.router.navigate(['/admin/inicio']);
-      } else {
-        this.router.navigate(['/usuario/inicio']);
-      }
+      this.loginSession();
     } else {
       console.log('not found');
+    }
+  }
+
+  loginSession() {
+    if (this.sessionType === 'admin') {
+      this.router.navigate(['/admin/inicio']);
+    } else {
+      this.router.navigate(['/usuario/inicio']);
     }
   }
 
   logoutAction() {
     this.storage.clear();
     this.sessionData = '';
+    this.sessionType = '';
+    this.router.navigate(['/login']);
   }
 }
