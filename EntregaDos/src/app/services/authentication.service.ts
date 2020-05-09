@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Usuario } from '../models/Usuario';
 import { Router } from '@angular/router';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,7 @@ export class AuthenticationService {
   //usefullData
   sessionLogin: boolean = false;
   sessionType: string;
-  sessionData: Usuario;
+  sessionData: any = '';
 
   constructor(
     @Inject(LOCAL_STORAGE) private storage: StorageService,
@@ -43,7 +44,7 @@ export class AuthenticationService {
       this.sessionType = user.tipo;
 
       this.storage.set('SESSION', { user: user_email, pass: password });
-      console.log(this.storage.get('SESSION'));
+      this.sessionData = this.storage.get('SESSION');
 
       if (this.sessionType === 'admin') {
         this.router.navigate(['/admin/inicio']);
@@ -57,5 +58,6 @@ export class AuthenticationService {
 
   logoutAction() {
     this.storage.clear();
+    this.sessionData = '';
   }
 }
