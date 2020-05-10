@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 //modules
-import { UserModule } from './modules/user/user.module';
-import { AdminModule } from './modules/admin/admin.module';
 import { IndexComponent } from './modules/landingpage/components/index/index.component';
 //components
 import { LoginComponent } from './main-components/login/login.component';
 import { SiginComponent } from './main-components/sigin/sigin.component';
-import { SidebarComponent } from './main-components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {

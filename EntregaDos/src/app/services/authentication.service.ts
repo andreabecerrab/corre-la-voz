@@ -2,7 +2,6 @@ import { Inject, Injectable } from '@angular/core';
 import { Usuario } from '../models/Usuario';
 import { Router } from '@angular/router';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +27,7 @@ export class AuthenticationService {
     },
   ];
   //usefullData
-  sessionLogin: boolean = false;
+  public sessionLogin: boolean = false;
   sessionType: string;
   sessionData: any = this.storage.get('SESSION') || '';
 
@@ -37,13 +36,26 @@ export class AuthenticationService {
     private router: Router
   ) {}
 
-  loginAction(user_email: string, password: string) {
+  public get currentUserValue() {
+    return this.storage.get('SESSION') || '';
+  }
+
+  getCurrent() {
+    let t = this.storage.get('SESSION') || '';
+    return t;
+  }
+
+  loginAction(user_email: string, password: string): void {
     let user = this.usuarios.find((element) => element.correo === user_email);
     if (typeof user !== 'undefined') {
       this.sessionLogin = true;
       this.sessionType = user.tipo;
 
-      this.storage.set('SESSION', { user: user_email, pass: password });
+      this.storage.set('SESSION', {
+        user: user_email,
+        pass: password,
+        type: user.tipo,
+      });
       this.sessionData = this.storage.get('SESSION');
 
       this.loginSession();
@@ -51,8 +63,8 @@ export class AuthenticationService {
       console.log('not found');
     }
   }
-
-  loginSession() {
+  //reload hasta hacer async
+  loginSession(): void {
     if (this.sessionType === 'admin') {
       this.router.navigate(['/admin/inicio']);
     } else {
@@ -60,7 +72,7 @@ export class AuthenticationService {
     }
   }
 
-  logoutAction() {
+  logoutAction(): void {
     this.storage.clear();
     this.sessionData = '';
     this.sessionType = '';

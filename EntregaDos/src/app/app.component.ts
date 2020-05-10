@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'EntregaDos';
   userlogin: boolean = false;
-  adminlogin: boolean = true;
+  adminlogin: boolean = false;
+  sessionType;
+
+  constructor(private authenticationService: AuthenticationService) {}
+
+  ngOnInit(): void {
+    this.sessionType = this.authenticationService.getCurrent();
+    console.log(this.sessionType.type);
+
+    if (this.sessionType.type === 'admin') {
+      this.adminlogin = true;
+    } else if (this.sessionType.type === 'user') {
+      this.userlogin = true;
+    } else {
+      this.userlogin = false;
+      this.adminlogin = false;
+    }
+  }
 }
