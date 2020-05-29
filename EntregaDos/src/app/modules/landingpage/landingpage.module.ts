@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IndexComponent } from './components/index/index.component';
+import {HttpClientModule} from '@angular/common/http';
 //routing
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
@@ -16,7 +17,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     FooterComponent,
     IndexComponent,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule,HttpClientModule],
   exports: [IndexComponent],
 })
 export class LandingpageModule {}
