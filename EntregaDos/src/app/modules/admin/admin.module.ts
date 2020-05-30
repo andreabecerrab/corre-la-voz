@@ -7,6 +7,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { EditStrikeComponent } from './components/edit-strike/edit-strike.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminGraphComponent } from './components/admin-graph/admin-graph.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { AdminGraphComponent } from './components/admin-graph/admin-graph.compon
     EditStrikeComponent,
     AdminGraphComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule, ChartsModule],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule, ChartsModule,HttpClientModule],
   exports: [AdminDashboardComponent, TableStrikesComponent],
 })
 export class AdminModule {}

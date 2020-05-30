@@ -16,6 +16,9 @@ import { CommentsComponent } from './components/comments/comments.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
 import { StrikecardComponent } from './components/strikecard/strikecard.component';
+import {HttpClientModule} from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -31,8 +34,9 @@ import { StrikecardComponent } from './components/strikecard/strikecard.componen
     UserhomeComponent,
     CommentsComponent,
     StrikecardComponent,
+
   ],
   exports: [UserhomeComponent, ResourcesComponent],
-  imports: [CommonModule, FormsModule, UserRoutingModule],
+  imports: [CommonModule, FormsModule, UserRoutingModule, HttpClientModule],
 })
 export class UserModule {}

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 //main components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
@@ -28,6 +29,7 @@ registerLocaleData(localeUS, 'en');
 //Services
 import { TweetsService } from './services/tweets.service';
 import { MarchaServiceService } from './services/marcha-service.service';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { MarchaServiceService } from './services/marcha-service.service';
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [ProfileComponent],
   providers: [MarchaServiceService, TweetsService],
