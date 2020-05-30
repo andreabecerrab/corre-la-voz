@@ -53,14 +53,21 @@ export class MarchaServiceService {
   }
   //prueba para segunda entrega despues --> DB
   addMarcha(body: FormData) {
+    //image
+
+    console.log('wasup  ' + body);
+
     let sbody = JSON.stringify(body);
     var json = JSON.parse(sbody);
+    console.log(json);
+
     json.id = this.id;
     json.comentarios = [];
 
     this.marchas.push(json);
     this.id++;
   }
+
   editMarcha(id, body: FormData) {
     let sbody = JSON.stringify(body);
     var json = JSON.parse(sbody);
@@ -83,6 +90,7 @@ export class MarchaServiceService {
   getMarcha(id) {
     return this.marchas.find((e) => e.id === id);
   }
+
   postComentario(id, comentario) {
     this.marchas.find((e) => e.id === id).comentarios.push(comentario);
   }

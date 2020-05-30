@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
-import { Marcha } from 'src/app/models/Marcha';
+
+import { mimeType } from './mime-type-controller';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -20,11 +21,18 @@ export class AdminDashboardComponent implements OnInit {
       desc: ['', Validators.required],
       hashtag: ['', Validators.required],
       direccion: ['', Validators.required],
-      img: ['', Validators.required],
+      img: [null, Validators.required, mimeType],
     });
   }
 
   ngOnInit(): void {}
+
+  onImagePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.marchaForm.patchValue({ img: file });
+    console.log(this.marchaForm);
+    this.marchaForm.get('img').updateValueAndValidity();
+  }
 
   post() {
     //console.log(this.marchaForm.value);

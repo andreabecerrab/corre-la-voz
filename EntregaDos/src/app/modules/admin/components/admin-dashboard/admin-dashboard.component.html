@@ -116,7 +116,7 @@
           type="file"
           class="form-control-file"
           id="exampleFormControlFile1"
-          formControlName="img"
+          (change)="onImagePicked($event)"
         />
       </div>
       <button
