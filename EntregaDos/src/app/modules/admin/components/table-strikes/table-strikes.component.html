@@ -5,19 +5,19 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">#ID</th>
           <th scope="col" i18n="@@name">Nombre</th>
           <th scope="col" id="date" i18n="@@date">Fecha</th>
           <th scope="col" id="hash">#hastag</th>
+          <th scope="col" id="loc">Loc.</th>
           <th scope="col" i18n="@@edit">editar</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let strike of strikes">
-          <th scope="table-row">{{ strike.id }}</th>
           <td>{{ strike.nombre }}</td>
           <td id="date">{{ strike.fecha }}</td>
           <td id="hash">{{ strike.hashtag }}</td>
+          <td id="loc">{{ strike.direccion }}</td>
           <td class="table-row">
             <a
               ><i
@@ -35,7 +35,7 @@
                 type="button"
                 data-toggle="modal"
                 data-target="#confirm"
-                (click)="delete(strike.id)"
+                (click)="delete(strike._id)"
                 >delete</i
               ></a
             >
@@ -58,8 +58,8 @@
               type="button"
               id="continue"
               class="my-btn blue"
-              data-dismiss="modal"
               (click)="confirmDelete()"
+              data-dismiss="modal"
             >
               Borrar
             </button>

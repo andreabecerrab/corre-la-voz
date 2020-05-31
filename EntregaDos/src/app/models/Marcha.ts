@@ -1,7 +1,7 @@
 import { Comentario } from '../models/Comentario';
 export class Marcha {
   constructor(
-    public id?: number,
+    public _id?: string,
     public img?: string,
     public nombre?: string,
     public fecha?: string,
@@ -11,6 +11,6 @@ export class Marcha {
     // public imagenes: [string] = [''],
     // public trafico: [string] = [''],
     // public marks: [string] = [''],
-    public comentarios= []
+    public comentarios = []
   ) {}
 }

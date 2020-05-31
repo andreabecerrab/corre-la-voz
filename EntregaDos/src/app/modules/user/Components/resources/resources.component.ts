@@ -8,13 +8,9 @@ import { Comentario } from 'src/app/models/Comentario';
   templateUrl: './resources.component.html',
 })
 export class ResourcesComponent implements OnInit {
-  id: number;
-  strike: Marcha;
+  strike;
   comentarios: Comentario[];
-  constructor(private _marchasServices: MarchaServiceService) {}
+  constructor(private _marchaServices: MarchaServiceService) {}
 
-  ngOnInit(): void {
-    this.strike = this._marchasServices.getMarcha(2);
-    this.comentarios = this.strike.comentarios;
-  }
+  ngOnInit(): void {}
 }
