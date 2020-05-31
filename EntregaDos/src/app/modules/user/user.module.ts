@@ -10,15 +10,13 @@ import { AgregarMarkComponent } from './components/agregar-mark/agregar-mark.com
 import { AgregarpuntoComponent } from './components/agregarpunto/agregarpunto.component';
 import { ContentDescripcionMarcharchasComponent } from './components/content-descripcion-marcharchas/content-descripcion-marcharchas.component';
 import { ResourcesComponent } from './components/resources/resources.component';
-import { TwitterComponent } from './components/twitter/twitter.component';
+
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
 //routing
 import { UserRoutingModule } from './user-routing.module';
 import { StrikecardComponent } from './components/strikecard/strikecard.component';
-import {HttpClientModule} from '@angular/common/http';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,11 +28,9 @@ import {HttpClientModule} from '@angular/common/http';
     AgregarpuntoComponent,
     ContentDescripcionMarcharchasComponent,
     ResourcesComponent,
-    TwitterComponent,
     UserhomeComponent,
     CommentsComponent,
     StrikecardComponent,
-
   ],
   exports: [UserhomeComponent, ResourcesComponent],
   imports: [CommonModule, FormsModule, UserRoutingModule, HttpClientModule],
