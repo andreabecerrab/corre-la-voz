@@ -51,7 +51,13 @@ export class MarchaServiceService {
   getMarcha(id: string): Observable<Marcha> {
     return this.http.get<Marcha>(this.endpoint + '/marcha/' + id);
   }
-  postComentario(id: any, comentario: Comentario) {
-    this.http.post(this.endpoint + '/add-comment/' + id, comentario);
+
+  async postComentario(id: string, comentario: Comentario) {
+    let data = await this.http
+      .put(this.endpoint + '/add-comment/' + id, comentario)
+      .subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
   }
 }

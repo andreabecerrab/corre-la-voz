@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './resources.component.html',
 })
 export class ResourcesComponent implements OnInit {
-  id: number;
+  id: string;
   strike: Marcha;
   comentarios: Comentario[];
 
@@ -26,7 +26,9 @@ export class ResourcesComponent implements OnInit {
           .getMarcha(params.get('id'))
           .subscribe(
             (strike) => (
-              (this.strike = strike), (this.comentarios = strike.comentarios)
+              (this.strike = strike),
+              (this.comentarios = strike.comentarios),
+              (this.id = strike._id)
             )
           );
       } else {

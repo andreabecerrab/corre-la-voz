@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 //main components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
@@ -27,7 +27,6 @@ import localeUS from '@angular/common/locales/en';
 registerLocaleData(localeMX, 'es-149');
 registerLocaleData(localeUS, 'en');
 //Services
-import { TweetsService } from './services/tweets.service';
 import { MarchaServiceService } from './services/marcha-service.service';
 import { from } from 'rxjs';
 
@@ -56,7 +55,7 @@ import { from } from 'rxjs';
     HttpClientModule,
   ],
   exports: [ProfileComponent],
-  providers: [MarchaServiceService, TweetsService],
+  providers: [MarchaServiceService],
 
   bootstrap: [AppComponent],
 })
