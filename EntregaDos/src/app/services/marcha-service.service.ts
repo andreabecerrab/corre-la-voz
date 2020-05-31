@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Marcha } from '../models/Marcha';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarchaServiceService {
   id: number = 5;
-  marchas: Marcha[] = [
+  marchas: any[] = [
     {
       id: 1,
       img: '/assets/img/cc.jpg',
@@ -87,7 +88,7 @@ export class MarchaServiceService {
       }
     }
   }
-  getMarcha(id) {
+  getMarcha(id): Observable<any> {
     return this.marchas.find((e) => e.id === id);
   }
 

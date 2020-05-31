@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
-import { Marcha } from 'src/app/models/Marcha';
+
 import { Comentario } from 'src/app/models/Comentario';
 
 @Component({
@@ -9,12 +13,19 @@ import { Comentario } from 'src/app/models/Comentario';
 })
 export class ResourcesComponent implements OnInit {
   id: number;
-  strike: Marcha;
+  strike;
   comentarios: Comentario[];
-  constructor(private _marchasServices: MarchaServiceService) {}
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private _marchasServices: MarchaServiceService
+  ) {}
 
   ngOnInit(): void {
-    this.strike = this._marchasServices.getMarcha(2);
-    this.comentarios = this.strike.comentarios;
+    console.log(this.route.snapshot.params);
+    this.id = this.route.snapshot.params.id;
+    this.strike = this._marchasServices.getMarcha(this.id);
+    console.log(this.strike);
   }
 }

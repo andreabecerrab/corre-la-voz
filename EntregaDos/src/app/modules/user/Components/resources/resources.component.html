@@ -2,7 +2,7 @@
   <div class="tab-pane show active">
     <!-- STRIKE CONTENT-->
     <div class="other-section section-single-style">
-      <div class="strike-content">
+      <div class="strike-content" *ngIf="strike | async as strike">
         <app-content-descripcion-marcharchas
           [strike]="strike"
         ></app-content-descripcion-marcharchas>
