@@ -11,6 +11,6 @@ export class Marcha {
     // public imagenes: [string] = [''],
     // public trafico: [string] = [''],
     // public marks: [string] = [''],
-    public comentarios: Comentario[] = [{}]
+    public comentarios= []
   ) {}
 }

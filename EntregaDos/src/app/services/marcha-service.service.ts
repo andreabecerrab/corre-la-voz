@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Marcha } from '../models/Marcha';
+import {HttpClient,HttpHeaders,HttpResponse,HttpErrorResponse} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {map,retry,catchError, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarchaServiceService {
+  endpoint= 'http://localhost:8081/api/marchas';
   id: number = 5;
   marchas: Marcha[] = [
     {
@@ -47,9 +51,14 @@ export class MarchaServiceService {
     },
   ];
 
-  constructor() {}
-  getMarchas() {
-    return this.marchas;
+  constructor(private http:HttpClient) {}
+  private extaData(res:Response){
+    let body=res;
+    return body || {};
+  }
+
+  getMarchas(): Observable<any>{
+    return this.http.get(this.endpoint);
   }
   //prueba para segunda entrega despues --> DB
   addMarcha(body: FormData) {
@@ -58,32 +67,25 @@ export class MarchaServiceService {
     json.id = this.id;
     json.comentarios = [];
 
-    this.marchas.push(json);
+    this.http.post(this.endpoint,json);
     this.id++;
   }
   editMarcha(id, body: FormData) {
     let sbody = JSON.stringify(body);
     var json = JSON.parse(sbody);
+    this.http.put(this.endpoint+"/edit-marcha/"+id,json);
 
-    let original = this.marchas.find((element) => element.id === id);
-
-    for (let property in json) {
-      if (json[property] != '' && json[property] != null) {
-        original[property] = json[property];
-      }
-    }
   }
+
   deleteMarcha(id) {
-    for (let i = 0; i < this.marchas.length; i++) {
-      if (this.marchas[i].id === id) {
-        this.marchas.splice(i--, 1);
-      }
-    }
+    this.http.delete(this.endpoint+ "/delete-marcha/"+id);
   }
+
+   
   getMarcha(id) {
-    return this.marchas.find((e) => e.id === id);
+    return this.http.get(this.endpoint+"/marcha/"+id);
   }
   postComentario(id, comentario) {
-    this.marchas.find((e) => e.id === id).comentarios.push(comentario);
+     this.http.post(this.endpoint+"/add-comment/"+id,comentario);
   }
 }

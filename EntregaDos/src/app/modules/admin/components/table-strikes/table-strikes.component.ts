@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcha } from 'src/app/models/Marcha';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-table-strikes',
   templateUrl: './table-strikes.component.html',
 })
 export class TableStrikesComponent implements OnInit {
-  strikes = [];
+  strikes;
   selectedDelete: number = -1;
   selectedEdit: Marcha;
 
   constructor(private _marchaServices: MarchaServiceService) {}
   ngOnInit() {
-    this.strikes = this._marchaServices.getMarchas();
+    this.strikes=this._marchaServices.getMarchas();
   }
   delete(id) {
     this.selectedDelete = id;
