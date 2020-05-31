@@ -24,11 +24,14 @@ export class ResourcesComponent implements OnInit {
       if (params.has('id')) {
         this._marchasServices
           .getMarcha(params.get('id'))
-          .subscribe((strike) => (this.strike = strike));
+          .subscribe(
+            (strike) => (
+              (this.strike = strike), (this.comentarios = strike.comentarios)
+            )
+          );
       } else {
         console.log('id not founded');
       }
     });
-    this.comentarios = this.strike.comentarios;
   }
 }
