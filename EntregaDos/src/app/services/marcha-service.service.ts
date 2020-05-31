@@ -48,8 +48,8 @@ export class MarchaServiceService {
       );
   }
 
-  getMarcha(id: any) {
-    return this.http.get(this.endpoint + '/marcha/' + id);
+  getMarcha(id: string): Observable<Marcha> {
+    return this.http.get<Marcha>(this.endpoint + '/marcha/' + id);
   }
   postComentario(id: any, comentario: Comentario) {
     this.http.post(this.endpoint + '/add-comment/' + id, comentario);

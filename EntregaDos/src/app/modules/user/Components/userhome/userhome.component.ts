@@ -25,7 +25,12 @@ import { Marcha } from 'src/app/models/Marcha';
   ],
 })
 export class UserhomeComponent implements OnInit {
+  strikes: Marcha[];
   constructor(private _marchaServices: MarchaServiceService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._marchaServices
+      .getMarchas()
+      .subscribe((strikes) => (this.strikes = strikes));
+  }
 }
