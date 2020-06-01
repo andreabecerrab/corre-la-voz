@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcha } from 'src/app/models/Marcha';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table-strikes',
@@ -9,15 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class TableStrikesComponent implements OnInit {
   strikes: Marcha[];
+  private marchaSub: Subscription;
   selectedDelete: string;
   selectedEdit: Marcha;
 
   constructor(private _marchaServices: MarchaServiceService) {}
 
   ngOnInit() {
-    this._marchaServices
-      .getMarchas()
-      .subscribe((strikes) => (this.strikes = strikes));
+    this._marchaServices.getMarchas();
+    this.marchaSub = this._marchaServices
+      .getMarchasUpdatedListener()
+      .subscribe((strikes: Marcha[]) => (this.strikes = strikes));
   }
   delete(id: string) {
     this.selectedDelete = id;

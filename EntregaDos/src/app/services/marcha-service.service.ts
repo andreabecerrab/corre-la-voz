@@ -6,7 +6,7 @@ import {
   HttpResponse,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map, retry, catchError, tap } from 'rxjs/operators';
 import { Comentario } from '../models/Comentario';
 
@@ -14,50 +14,101 @@ import { Comentario } from '../models/Comentario';
   providedIn: 'root',
 })
 export class MarchaServiceService {
-  endpoint = 'http://localhost:8081/api';
+  private marchas: Marcha[] = [];
+  private marcha: Marcha = null;
+  private marchaUpdated = new Subject<Marcha[]>();
+  private marchaSelected = new Subject<Marcha>();
 
   constructor(private http: HttpClient) {}
 
-  getMarchas(): Observable<Marcha[]> {
-    return this.http.get<Marcha[]>(this.endpoint + '/marchas');
+  endpoint = 'http://localhost:8081/api';
+
+  getMarchas() {
+    this.http.get<Marcha[]>(this.endpoint + '/marchas').subscribe((data) => {
+      this.marchas = data;
+      this.marchaUpdated.next([...this.marchas]);
+    });
   }
 
-  async addMarcha(body: FormData) {
-    //this.http.post(this.endpoint + '/marchas', body);
-    let data = await this.http.post(this.endpoint + '/marchas', body).subscribe(
+  getMarchasUpdatedListener() {
+    return this.marchaUpdated.asObservable();
+  }
+
+  getMarcha(id: string) {
+    return this.http
+      .get<Marcha>(this.endpoint + '/marcha/' + id)
+      .subscribe((data) => {
+        this.marcha = data;
+        this.marchaSelected.next(this.marcha);
+      });
+  }
+  getMarchaUpdatedListener() {
+    return this.marchaSelected.asObservable();
+  }
+
+  async addMarcha(
+    nombre: string,
+    fecha: string,
+    desc: string,
+    hashtag: string,
+    direccion: string,
+    img: File
+  ) {
+    //body.append('img', body.img, body.img.name);
+
+    var formData: any = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('fecha', fecha);
+    formData.append('desc', desc);
+    formData.append('hashtag', hashtag);
+    formData.append('direccion', direccion);
+    formData.append('img', img, nombre);
+
+    let data = await this.http
+      .post(this.endpoint + '/marchas', formData)
+      .subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
+  }
+
+  async editMarcha(id: string, body: FormData) {
+    //for observable
+    let sbody = JSON.stringify(body);
+    var json = JSON.parse(sbody);
+
+    let original = this.marchas.find((element) => element._id === id);
+
+    for (let property in json) {
+      if (json[property] != '' && json[property] != null) {
+        original[property] = json[property];
+      }
+    }
+
+    this.http.put(this.endpoint + '/edit-marcha/' + id, body).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
   }
 
-  async editMarcha(id: string, body: FormData) {
-    let data = await this.http
-      .put(this.endpoint + '/edit-marcha/' + id, body)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+  deleteMarcha(id: string) {
+    for (let i = 0; i < this.marchas.length; i++) {
+      if (this.marchas[i]._id === id) {
+        this.marchas.splice(i--, 1);
+      }
+    }
+    this.http.delete(this.endpoint + '/delete-marcha/' + id).subscribe(
+      (response) => this.getMarchas(),
+      (error) => console.log(error)
+    );
   }
 
-  async deleteMarcha(id: string) {
-    let data = await this.http
-      .delete(this.endpoint + '/delete-marcha/' + id)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
-  }
+  postComentario(id: string, comentario: Comentario) {
+    this.marcha.comentarios.push(comentario);
 
-  getMarcha(id: string): Observable<Marcha> {
-    return this.http.get<Marcha>(this.endpoint + '/marcha/' + id);
-  }
-
-  async postComentario(id: string, comentario: Comentario) {
-    let data = await this.http
-      .put(this.endpoint + '/add-comment/' + id, comentario)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+    this.http.put(this.endpoint + '/add-comment/' + id, comentario).subscribe(
+      (response) => this.getMarcha(id),
+      (error) => console.log(error)
+    );
   }
 }

@@ -21,7 +21,7 @@ export class AdminDashboardComponent implements OnInit {
       desc: ['', Validators.required],
       hashtag: ['', Validators.required],
       direccion: ['', Validators.required],
-      img: [null, Validators.required, mimeType],
+      img: ['', Validators.required, mimeType],
     });
   }
 
@@ -30,13 +30,18 @@ export class AdminDashboardComponent implements OnInit {
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.marchaForm.patchValue({ img: file });
-    console.log(this.marchaForm);
     this.marchaForm.get('img').updateValueAndValidity();
   }
 
   post() {
-    //console.log(this.marchaForm.value);
-    this._marchasServices.addMarcha(this.marchaForm.value);
+    this._marchasServices.addMarcha(
+      this.marchaForm.value.nombre,
+      this.marchaForm.value.fecha,
+      this.marchaForm.value.desc,
+      this.marchaForm.value.hashtag,
+      this.marchaForm.value.direccion,
+      this.marchaForm.value.img
+    );
     this.marchaForm.reset();
   }
 }

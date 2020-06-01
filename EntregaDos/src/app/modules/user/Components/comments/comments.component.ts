@@ -35,8 +35,6 @@ export class CommentsComponent implements OnInit {
   }
   post() {
     var date = new Date().toISOString().split('T')[0];
-    console.log(date);
-
     this._marchasServices.postComentario(this.id, {
       nombre: 'Andrea',
       fecha: date,

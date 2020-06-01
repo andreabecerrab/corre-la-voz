@@ -37,9 +37,8 @@
               type="date"
               class="op-form-control"
               formControlName="fecha"
-              value = "{{selectedEdit.fecha | date: 'aaaa-MM-dd'}}" 
-              [ngModel] = "selectedEdit.fecha"
-             
+              value="{{ selectedEdit.fecha | date: 'aaaa-MM-dd' }}"
+              [ngModel]="selectedEdit.fecha"
             />
           </div>
         </div>
@@ -115,17 +114,7 @@
             ></textarea>
           </div>
         </div>
-        <!-- <label class="file">Agregar imagen<input type="file" /></label> i18n="@@addImage"-->
-        <img src="{{ selectedEdit.img }}" />
-        <div class="form-group">
-          <label i18n="@@addImage">Agregar imagen</label>
-          <input
-            type="file"
-            class="form-control-file"
-            id="exampleFormControlFile1"
-            formControlName="img"
-          />
-        </div>
+
         <div class="alert-inputs">
           <button
             type="submit"

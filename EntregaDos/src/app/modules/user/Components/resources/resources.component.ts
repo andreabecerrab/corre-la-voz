@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
 import { Comentario } from 'src/app/models/Comentario';
 import { Marcha } from 'src/app/models/Marcha';
@@ -12,6 +12,7 @@ import { Marcha } from 'src/app/models/Marcha';
 export class ResourcesComponent implements OnInit {
   id: string;
   strike: Marcha;
+  private marchaSub: Subscription;
   comentarios: Comentario[];
 
   constructor(
@@ -23,15 +24,14 @@ export class ResourcesComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       if (params.has('id')) {
-        this._marchasServices
-          .getMarcha(params.get('id'))
-          .subscribe(
-            (strike) => (
-              (this.strike = strike),
-              (this.comentarios = strike.comentarios),
-              (this.id = strike._id)
-            )
-          );
+        this._marchasServices.getMarcha(params.get('id'));
+        this.marchaSub = this._marchasServices
+          .getMarchaUpdatedListener()
+          .subscribe((strike: Marcha) => {
+            (this.strike = strike),
+              (this.comentarios = this.strike.comentarios),
+              (this.id = strike._id);
+          });
       } else {
         console.log('id not founded');
       }
