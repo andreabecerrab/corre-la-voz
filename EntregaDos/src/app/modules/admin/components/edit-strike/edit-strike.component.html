@@ -37,6 +37,9 @@
               type="date"
               class="op-form-control"
               formControlName="fecha"
+              value = "{{selectedEdit.fecha | date: 'aaaa-MM-dd'}}" 
+              [ngModel] = "selectedEdit.fecha"
+             
             />
           </div>
         </div>
