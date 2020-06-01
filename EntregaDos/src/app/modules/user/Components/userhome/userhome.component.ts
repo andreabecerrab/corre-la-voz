@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { Marcha } from 'src/app/models/Marcha';
 
 @Component({
   selector: 'app-userhome',
@@ -24,11 +25,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ],
 })
 export class UserhomeComponent implements OnInit {
-  id: number;
-  strikes = [];
-  constructor(private _marchasServices: MarchaServiceService) {}
+  strikes: Marcha[];
+  constructor(private _marchaServices: MarchaServiceService) {}
 
   ngOnInit() {
-    this.strikes = this._marchasServices.getMarchas();
+    this._marchaServices
+      .getMarchas()
+      .subscribe((strikes) => (this.strikes = strikes));
   }
 }

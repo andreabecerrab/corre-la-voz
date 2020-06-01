@@ -32,7 +32,7 @@ export class EditStrikeComponent implements OnInit {
 
   edit() {
     this._marchaServices.editMarcha(
-      this.selectedEdit.id,
+      this.selectedEdit._id,
       this.marchaEditForm.value
     );
     this.marchaEditForm.reset();

@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs/operators';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
-
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
-
 import { Comentario } from 'src/app/models/Comentario';
+import { Marcha } from 'src/app/models/Marcha';
 
 @Component({
   selector: 'app-resources',
   templateUrl: './resources.component.html',
 })
 export class ResourcesComponent implements OnInit {
-  id: number;
-  strike;
+  id: string;
+  strike: Marcha;
   comentarios: Comentario[];
 
   constructor(
@@ -23,9 +21,20 @@ export class ResourcesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params);
-    this.id = this.route.snapshot.params.id;
-    this.strike = this._marchasServices.getMarcha(this.id);
-    console.log(this.strike);
+    this.route.paramMap.subscribe((params) => {
+      if (params.has('id')) {
+        this._marchasServices
+          .getMarcha(params.get('id'))
+          .subscribe(
+            (strike) => (
+              (this.strike = strike),
+              (this.comentarios = strike.comentarios),
+              (this.id = strike._id)
+            )
+          );
+      } else {
+        console.log('id not founded');
+      }
+    });
   }
 }
