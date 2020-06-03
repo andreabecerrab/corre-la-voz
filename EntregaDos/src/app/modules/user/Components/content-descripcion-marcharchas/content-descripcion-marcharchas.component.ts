@@ -7,8 +7,11 @@ import { Marcha } from 'src/app/models/Marcha';
 })
 export class ContentDescripcionMarcharchasComponent implements OnInit {
   @Input() strike: Marcha;
+  direccion: any;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.direccion = this.strike.direccion;
+  }
 }

@@ -1,9 +1,15 @@
 <div class="images-section">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active"></div>
+      <div class="carousel-item active">
+        <img
+          src="../../../../../assets/img/galeria.png"
+          alt="First slide"
+          class="imgs_carrusel"
+        />
+      </div>
       <div class="carousel-item" *ngFor="let img of imgs">
-        <img src="{{ img }}" alt="First slide" class="imgs_carrusel" />
+        <img src="{{ img }}" alt="fotografia" class="imgs_carrusel" />
       </div>
     </div>
     <!-- controls -->
@@ -26,7 +32,7 @@
       <span class="sr-only"></span>
     </a>
   </div>
-
+  <!-- form -->
   <form [formGroup]="addimageForm" (ngSubmit)="post()">
     <label i18n="@@addImage">Agregar imagen</label>
     <input

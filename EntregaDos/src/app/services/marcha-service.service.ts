@@ -63,6 +63,7 @@ export class MarchaServiceService {
     formData.append('hashtag', hashtag);
     formData.append('direccion', direccion);
     formData.append('img', img, nombre);
+    this.getDireccion(direccion);
 
     this.http.post(this.endpoint + '/marchas', formData).subscribe(
       (response) => console.log(response),
@@ -121,5 +122,10 @@ export class MarchaServiceService {
       (response) => this.getMarcha(id),
       (error) => console.log(error)
     );
+  }
+
+  //get dirección
+  getDireccion(direccion: string) {
+    console.log('hola');
   }
 }

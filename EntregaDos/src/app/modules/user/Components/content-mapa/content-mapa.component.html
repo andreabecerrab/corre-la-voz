@@ -1,4 +1,29 @@
 <div class="map-section">
-  <app-mapa class="map"></app-mapa>
-  <app-interacrions></app-interacrions>
+  <mgl-map
+    [style]="'mapbox://styles/mapbox/streets-v11'"
+    [zoom]="[15]"
+    [center]="center"
+  >
+    <mgl-marker [lngLat]="center" #myMarker>
+      <div class="center">
+        <i class="material-icons md-dark" type="button" data-toggle="modal"
+          >room</i
+        >
+        <h1>Inicio</h1>
+      </div>
+    </mgl-marker>
+    <mgl-popup [marker]="myMarker">
+      {{ direccion.location }}
+    </mgl-popup>
+  </mgl-map>
 </div>
+<!-- <form>
+  <label i18n="@@trafficPin">Agregar mark para tráfico</label>
+  <input type="text" class="op-form-control" />
+  <button class="my-btn" i18n="@@add">Agregar</button>
+</form>
+<form>
+  <label i18n="@@importantSite">Agregar punto importante</label>
+  <input type="text" class="op-form-control" />
+  <button class="my-btn" i18n="@@add">Agregar</button>
+</form> -->

@@ -22,9 +22,7 @@ export class CarrusselComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log(this.imgs);
-  }
+  ngOnInit(): void {}
 
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
