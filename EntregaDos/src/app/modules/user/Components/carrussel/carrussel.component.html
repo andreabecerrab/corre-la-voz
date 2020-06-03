@@ -1,14 +1,9 @@
 <div class="images-section">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets/img/cover.jpg" alt="First slide" />
-      </div>
-      <div class="carousel-item">
-        <img src="assets/img/cover.jpg" alt="Second slide" />
-      </div>
-      <div class="carousel-item">
-        <img src="assets/img/cover.jpg" alt="Third slide" />
+      <div class="carousel-item active"></div>
+      <div class="carousel-item" *ngFor="let img of imgs">
+        <img src="{{ img }}" alt="First slide" class="imgs_carrusel" />
       </div>
     </div>
     <!-- controls -->
@@ -32,8 +27,16 @@
     </a>
   </div>
 
-  <form>
+  <form [formGroup]="addimageForm" (ngSubmit)="post()">
     <label i18n="@@addImage">Agregar imagen</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+    <input
+      type="file"
+      class="form-control-file"
+      id="exampleFormControlFile1"
+      (change)="onImagePicked($event)"
+    />
+    <button type="button" class="my-btn" (click)="post()">
+      Post
+    </button>
   </form>
 </div>

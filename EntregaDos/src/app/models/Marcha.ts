@@ -8,7 +8,7 @@ export class Marcha {
     public hashtag?: string,
     public descripcion?: string,
     public direccion?: string,
-    // public imagenes: [string] = [''],
+    public imgs: [string] = [''],
     // public trafico: [string] = [''],
     // public marks: [string] = [''],
     public comentarios = []

@@ -14,6 +14,7 @@ export class ResourcesComponent implements OnInit {
   strike: Marcha;
   private marchaSub: Subscription;
   comentarios: Comentario[];
+  imgs: [string];
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +31,8 @@ export class ResourcesComponent implements OnInit {
           .subscribe((strike: Marcha) => {
             (this.strike = strike),
               (this.comentarios = this.strike.comentarios),
-              (this.id = strike._id);
+              (this.id = strike._id),
+              (this.imgs = strike.imgs);
           });
       } else {
         console.log('id not founded');

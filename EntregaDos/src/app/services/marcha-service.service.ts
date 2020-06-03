@@ -64,12 +64,10 @@ export class MarchaServiceService {
     formData.append('direccion', direccion);
     formData.append('img', img, nombre);
 
-    let data = await this.http
-      .post(this.endpoint + '/marchas', formData)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+    this.http.post(this.endpoint + '/marchas', formData).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
   }
 
   async editMarcha(id: string, body: FormData) {
@@ -103,10 +101,23 @@ export class MarchaServiceService {
     );
   }
 
+  //user interactions
   postComentario(id: string, comentario: Comentario) {
     this.marcha.comentarios.push(comentario);
 
     this.http.put(this.endpoint + '/add-comment/' + id, comentario).subscribe(
+      (response) => this.getMarcha(id),
+      (error) => console.log(error)
+    );
+  }
+  postImage(id: string, img: File) {
+    //this.marcha.comentarios.push();
+    console.log(img);
+
+    var formData: any = new FormData();
+    formData.append('img', img);
+
+    this.http.put(this.endpoint + '/add-img/' + id, formData).subscribe(
       (response) => this.getMarcha(id),
       (error) => console.log(error)
     );

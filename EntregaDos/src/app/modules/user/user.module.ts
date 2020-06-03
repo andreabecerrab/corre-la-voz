@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
 import { CarrusselComponent } from './components/carrussel/carrussel.component';
@@ -33,6 +33,12 @@ import { HttpClientModule } from '@angular/common/http';
     StrikecardComponent,
   ],
   exports: [UserhomeComponent, ResourcesComponent],
-  imports: [CommonModule, FormsModule, UserRoutingModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    UserRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
 })
 export class UserModule {}

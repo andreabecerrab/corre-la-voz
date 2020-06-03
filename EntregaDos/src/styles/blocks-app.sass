@@ -1,7 +1,8 @@
 
 .tab-content
     margin-top: 4.5rem
-    margin-left: 260px
+    display: flex
+    justify-content: center
     h2, h6, h5
         color: $rgba-header
     h2 
@@ -12,6 +13,8 @@
         color: $color-purple
     .tab-pane
         padding-top: 5rem
+        width: 70%
+    
 
     //profile data
     .profile
@@ -31,7 +34,7 @@
     .index-page
         justify-content: space-between
         background-color: transparent
-        width: 95%
+        width: 70%
         form 
             width: 80%
             
@@ -50,11 +53,10 @@
         width: 75%  
         .my-btn
             margin-top: 0.8rem
-            width: 50%
+            width: 20%
 
 @include large
     .tab-content
-        margin-left: 150px
         .my-btn
             width: 30%
         .p-data, .contribution, .card
@@ -75,7 +77,6 @@
             width: 100%
 @include mobile
     .tab-content
-        margin-left: 35px
         .p-data
             width: 90%
         .section-style 
