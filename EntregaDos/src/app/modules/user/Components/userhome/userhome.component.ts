@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
+import { ApiService } from '../../../../services/api.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -38,11 +39,17 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class UserhomeComponent implements OnInit {
   strikes = [];
   id: number;
-  constructor(private _marchasServices: MarchaServiceService) {}
+  responseJson: string;
+  constructor(private _marchasServices: MarchaServiceService, private api: ApiService) {}
 
   ngOnInit() {
     this.strikes = this._marchasServices.getMarchas();
     // this._marchasServices.singleM.subscribe((id) => (this.id = id));
+  }
+  pingApi() {
+    this.api.ping$().subscribe(
+      res => this.responseJson = res
+    );
   }
 
   // selectMarcha() {

@@ -11,7 +11,7 @@ export class AppComponent {
   adminlogin: boolean = false;
   sessionType;
 
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(public authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.sessionType = this.authenticationService.getCurrent();
