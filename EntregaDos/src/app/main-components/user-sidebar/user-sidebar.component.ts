@@ -8,7 +8,7 @@ declare const fullHeight: any;
   templateUrl: './user-sidebar.component.html',
 })
 export class UserSidebarComponent implements OnInit {
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(public authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     fullHeight();

@@ -15,8 +15,18 @@
         routerLinkActive="class1"
         class="my-btn"
         i18n="@@login"
+        (click)="auth.login()" *ngIf="!auth.loggedIn"
       >
         Iniciar sesión
+      </button>
+      <button
+        routerLink="/login"
+        routerLinkActive="class1"
+        class="my-btn"
+        i18n="@@login"
+        (click)="auth.logout()" *ngIf="auth.loggedIn"
+      >
+        Cerrar sesión
       </button>
       <h2 i18n="@@intStrike">¿Quiéres integrar tu marcha?</h2>
       <h4 i18n="@@contactUs">Contáctanos</h4>
