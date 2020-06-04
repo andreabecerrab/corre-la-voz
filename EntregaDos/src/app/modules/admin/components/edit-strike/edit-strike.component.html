@@ -37,7 +37,7 @@
               type="date"
               class="op-form-control"
               formControlName="fecha"
-              value="{{ selectedEdit.fecha | date: 'aaaa-MM-dd' }}"
+              value="{{ selectedEdit.fecha | date: 'aaaa-mm-dd' }}"
               [ngModel]="selectedEdit.fecha"
             />
           </div>
@@ -81,7 +81,7 @@
               class="op-form-control"
               placeholder="Av. anibeuhoiw"
               formControlName="direccion"
-              placeholder="{{ selectedEdit.direccion }}"
+              placeholder="{{ address.address }}"
             />
           </div>
           <!-- <div class="op-form-md">

@@ -85,7 +85,7 @@ export class MarchaServiceService {
     }
 
     this.http.put(this.endpoint + '/edit-marcha/' + id, body).subscribe(
-      (response) => console.log(response),
+      (response) => console.log('Edited'),
       (error) => console.log(error)
     );
   }

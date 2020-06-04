@@ -11,6 +11,7 @@ declare const activateT: any;
 })
 export class EditStrikeComponent implements OnInit {
   @Input() selectedEdit: Marcha;
+  address: any;
   marchaEditForm: FormGroup;
 
   constructor(
@@ -27,6 +28,7 @@ export class EditStrikeComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    this.address = this.selectedEdit.direccion;
     activateT();
   }
 
