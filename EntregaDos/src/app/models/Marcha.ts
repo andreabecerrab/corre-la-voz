@@ -10,7 +10,7 @@ export class Marcha {
     public direccion?: {},
     public imgs: [string] = [''],
     // public trafico: [string] = [''],
-    // public marks: [string] = [''],
+    public puntosLoc: [any] = [''],
     public comentarios = []
   ) {}
 }

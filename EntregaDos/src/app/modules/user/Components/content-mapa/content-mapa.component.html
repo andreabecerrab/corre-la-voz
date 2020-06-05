@@ -1,8 +1,10 @@
-<div class="map-section">
+<div class="map-interactions">
   <mgl-map
     [style]="'mapbox://styles/mapbox/streets-v11'"
     [zoom]="[15]"
     [center]="center"
+    id="map"
+    (click)="mapClick($event)"
   >
     <mgl-marker [lngLat]="center" #myMarker>
       <div class="center">
@@ -15,17 +17,41 @@
     <mgl-popup [marker]="myMarker">
       {{ direccion.location }}
     </mgl-popup>
-  </mgl-map>
-</div>
 
-<div class="map-section"></div>
-<!-- <form>
-  <label i18n="@@trafficPin">Agregar mark para tráfico</label>
-  <input type="text" class="op-form-control" />
-  <button class="my-btn" i18n="@@add">Agregar</button>
-</form>
-<form>
-  <label i18n="@@importantSite">Agregar punto importante</label>
-  <input type="text" class="op-form-control" />
-  <button class="my-btn" i18n="@@add">Agregar</button>
-</form> -->
+    <mgl-marker [lngLat]="addmarker" #added>
+      <div class="new-marker">
+        <i
+          class="material-icons md-dark new-mark"
+          type="button"
+          data-toggle="modal"
+          >room</i
+        >
+      </div>
+    </mgl-marker>
+
+    <ng-container *ngFor="let punto of puntos">
+      <mgl-marker #myMarker [lngLat]="[punto.longitude, punto.latitude]">
+        <div class="points">
+          <i
+            class="material-icons md-dark new-mark"
+            type="button"
+            data-toggle="modal"
+            >room</i
+          >
+        </div>
+      </mgl-marker>
+      <mgl-popup [marker]="myMarker">{{ punto.title }}</mgl-popup>
+    </ng-container>
+  </mgl-map>
+
+  <div>
+    <label i18n="@@trafficPin">Comparte puntos de interés</label>
+    <input type="text" class="op-form-control" [(ngModel)]="titulo" />
+    <button class="my-btn" i18n="@@add" (click)="addPoint()">Agregar</button>
+  </div>
+  <!-- <form>
+    <label i18n="@@importantSite">Agregar punto importante</label>
+    <input type="text" class="op-form-control" />
+    <button class="my-btn" i18n="@@add">Agregar</button>
+  </form> -->
+</div>

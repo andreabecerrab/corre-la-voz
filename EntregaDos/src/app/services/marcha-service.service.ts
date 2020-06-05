@@ -63,7 +63,6 @@ export class MarchaServiceService {
     formData.append('hashtag', hashtag);
     formData.append('direccion', direccion);
     formData.append('img', img, nombre);
-    this.getDireccion(direccion);
 
     this.http.post(this.endpoint + '/marchas', formData).subscribe(
       (response) => console.log(response),
@@ -111,6 +110,7 @@ export class MarchaServiceService {
       (error) => console.log(error)
     );
   }
+
   postImage(id: string, img: File) {
     //this.marcha.comentarios.push();
     console.log(img);
@@ -124,8 +124,20 @@ export class MarchaServiceService {
     );
   }
 
-  //get dirección
-  getDireccion(direccion: string) {
-    console.log('hola');
+  addPoint(id: string, titulo: string, lat: any, lng: any) {
+    //this.marcha.comentarios.push();
+
+    var punto = {
+      title: titulo,
+      latitude: lat,
+      longitude: lng,
+    };
+
+    this.marcha.puntosLoc.push(punto);
+
+    this.http.put(this.endpoint + '/add-marker/' + id, punto).subscribe(
+      (response) => this.getMarcha(id),
+      (error) => console.log(error)
+    );
   }
 }

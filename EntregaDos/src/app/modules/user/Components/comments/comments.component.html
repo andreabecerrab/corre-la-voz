@@ -6,7 +6,7 @@
         <div class="panel-body">
           <textarea
             class="form-control"
-            placeholder="write a comment..."
+            placeholder="..."
             rows="3"
             [(ngModel)]="comentario"
           ></textarea>
@@ -17,7 +17,7 @@
           <div class="clearfix"></div>
           <hr />
           <ul class="media-list" *ngFor="let comentario of comentarios">
-            <li  class="comment-card" *ngIf="mostrados" [@inOutAnimation]>
+            <li class="comment-card" *ngIf="mostrados" [@inOutAnimation]>
               <div class="tw-profile">
                 <p class="tw-name">{{ comentario.nombre }}</p>
               </div>
