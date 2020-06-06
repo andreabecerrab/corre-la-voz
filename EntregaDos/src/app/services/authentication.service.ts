@@ -6,11 +6,17 @@ import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
+
+  user_for_db = {};
+  user_type = '';
+
   //fakeData
   usuarios: Usuario[] = [
     {
@@ -74,7 +80,8 @@ export class AuthenticationService {
 
   constructor(
     @Inject(LOCAL_STORAGE) private storage: StorageService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {
     // On initial load, check authentication state with authorization server
     // Set up local auth streams if user is already authenticated
@@ -120,9 +127,6 @@ export class AuthenticationService {
         appState: { target: redirectPath }
       });
     });
-    // this.sessionLogin = true;
-    // this.sessionType = 'user';
-    // this.loginSession();
   }
 
   private handleAuthCallback() {
@@ -148,6 +152,20 @@ export class AuthenticationService {
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
         // Redirect to target route after callback processing
+        console.log("USER------>");
+        this.user_type = 'user';
+        if (user.sub == 'google-oauth2|112018040146262791493'){
+          this.user_type = 'admin';
+          targetRoute = '/admin/inicio'
+        }
+        this.user_for_db = {
+          name: user.given_name,
+          last_name: user.family_name,
+          email: user.email,
+          type: this.user_type,
+          sub: user.sub
+        };
+        console.log(this.user_for_db);
         this.router.navigate([targetRoute]);
       });
     }
