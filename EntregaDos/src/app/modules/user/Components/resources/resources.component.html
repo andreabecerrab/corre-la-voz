@@ -1,18 +1,17 @@
 <div class="tab-content">
   <div class="tab-pane show active">
     <!-- STRIKE CONTENT-->
-    <div class="other-section section-single-style">
-      <div class="strike-content" *ngIf="strike">
-        <app-content-descripcion-marcharchas
-          [strike]="strike"
-        ></app-content-descripcion-marcharchas>
-        <app-carrussel [id]="id" [imgs]="imgs"></app-carrussel>
-        <app-content-mapa
-          class="map-section"
-          [strike]="strike"
-        ></app-content-mapa>
-        <app-comments [comentarios]="comentarios" [id]="id"></app-comments>
-      </div>
+    <!-- <div class="other-section section-single-style"></div> -->
+    <div class="strike-content" *ngIf="strike">
+      <app-content-descripcion-marcharchas
+        [strike]="strike"
+      ></app-content-descripcion-marcharchas>
+      <app-carrussel [id]="id" [imgs]="imgs"></app-carrussel>
+      <app-content-mapa
+        class="map-section center-items"
+        [strike]="strike"
+      ></app-content-mapa>
+      <app-comments [comentarios]="comentarios" [id]="id"></app-comments>
     </div>
   </div>
 </div>

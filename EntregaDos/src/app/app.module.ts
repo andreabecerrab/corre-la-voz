@@ -9,8 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
 import { SidebarComponent } from './main-components/sidebar/sidebar.component';
 import { ProfileComponent } from './main-components/profile/profile.component';
-import { LoginComponent } from './main-components/login/login.component';
-import { SiginComponent } from './main-components/sigin/sigin.component';
+
 import { RibbonComponent } from './main-components/ribbon/ribbon.component';
 //modules
 import { LandingpageModule } from './modules/landingpage/landingpage.module';
@@ -34,14 +33,11 @@ import { from } from 'rxjs';
   declarations: [
     HeaderComponent,
     AppComponent,
-    LoginComponent,
-    SiginComponent,
     RibbonComponent,
     SidebarComponent,
     ProfileComponent,
     UserSidebarComponent,
     EditProfileComponent,
-   
   ],
   imports: [
     BrowserModule,
@@ -54,7 +50,6 @@ import { from } from 'rxjs';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
   ],
   exports: [ProfileComponent],
   providers: [MarchaServiceService],

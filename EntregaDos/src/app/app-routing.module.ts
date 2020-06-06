@@ -7,34 +7,25 @@ import { InterceptorService } from './services/interceptor.service';
 //modules
 import { IndexComponent } from './modules/landingpage/components/index/index.component';
 //components
-import { LoginComponent } from './main-components/login/login.component';
-import { SiginComponent } from './main-components/sigin/sigin.component';
 
 const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'signin',
-    component: SiginComponent,
-  },
+
   //user
   {
     path: 'usuario',
     loadChildren: './modules/user/user.module#UserModule',
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   //admin
   {
     path: 'admin',
     loadChildren: './modules/admin/admin.module#AdminModule',
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 ];
 @NgModule({
@@ -44,8 +35,8 @@ const routes: Routes = [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class AppRoutingModule {}

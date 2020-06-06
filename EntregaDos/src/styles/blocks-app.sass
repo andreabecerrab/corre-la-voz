@@ -9,12 +9,12 @@
         margin-bottom: 3rem
     a 
         color: $rgba-header
+
     a:hover 
         color: $color-purple
     .tab-pane
         padding-top: 5rem
         width: 70%
-    
 
     //profile data
     .profile
@@ -37,7 +37,6 @@
         width: 70%
         form 
             width: 80%
-            
             .btn 
                 background-color: $color-red
                 color: color("white")
@@ -46,35 +45,8 @@
         .my-btn:hover
             background-color: $color-green
             color: color("white")
-    .section-single-style, .section-style
-        justify-content: space-between
-        width: 100%
-    .strike-content 
-        width: 75%  
-        .my-btn
-            margin-top: 0.8rem
-            width: 20%
 
-@include large
-    .tab-content
-        .my-btn
-            width: 30%
-        .p-data, .contribution, .card
-            width: 70%
-        .section-style 
-            width: 100%
-            .card
-                width: 70%
-                .btn 
-                    width: 50%
-        .places-options, .orders-options
-            flex-direction: column
-        .strike-content
-            width: 65%
-        .twitter 
-            width: 35%
-        .tw-card, .comment-card
-            width: 100%
+    
 @include mobile
     .tab-content
         .p-data

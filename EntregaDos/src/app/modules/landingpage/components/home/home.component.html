@@ -11,11 +11,12 @@
         la ciudad
       </p>
       <button
-        routerLink="/login"
+        routerLink="/"
         routerLinkActive="class1"
         class="my-btn"
         i18n="@@login"
-        (click)="auth.login()" *ngIf="!auth.loggedIn"
+        (click)="auth.login()"
+        *ngIf="!auth.loggedIn"
       >
         Iniciar sesión
       </button>
@@ -24,38 +25,14 @@
         routerLinkActive="class1"
         class="my-btn"
         i18n="@@login"
-        (click)="auth.logout()" *ngIf="auth.loggedIn"
+        (click)="auth.logout()"
+        *ngIf="auth.loggedIn"
       >
         Cerrar sesión
       </button>
       <h2 i18n="@@intStrike">¿Quiéres integrar tu marcha?</h2>
       <h4 i18n="@@contactUs">Contáctanos</h4>
       <p class="">contact@gmail.com</p>
-      <!-- <form>
-        <div class="form-group">
-          <label i18n="@@name">Nombre</label>
-          <input type="text" class="op-form-control" placeholder="Nombre" />
-        </div>
-        <div class="form-group">
-          <label i18n="@@phone">Teléfono</label>
-          <input
-            type="text"
-            class="op-form-control"
-            placeholder="+52 5512569985"
-          />
-        </div>
-        <div class="form-group">
-          <label i18n="@@email">Correo electrónico</label>
-          <input
-            type="email"
-            class="op-form-control"
-            placeholder="usuario@mail.com"
-          />
-        </div>
-        <button type="submit" class="my-btn" i18n="@@contact">
-          Contactar
-        </button>
-      </form> -->
     </div>
   </div>
 </div>

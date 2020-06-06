@@ -2,6 +2,13 @@
 @import "responsive"
 
 .strike-content
+    .center-items
+        display: flex
+        flex-direction: column
+        align-items: center
+    .my-btn
+        margin-top: 0.8rem
+        width: 20%
     .img-main
         width: 70%
         border-radius: 1.5rem
@@ -12,8 +19,8 @@
         flex-direction: column
         justify-content: center
         margin-left: 1rem
-    form 
-        margin-bottom: 1rem
+    form, .div-comments
+        width: 70%
     
 .map-section
     margin-bottom: 2rem
@@ -31,22 +38,17 @@
 
 mgl-map 
         height: 500px
-        width: 40rem
-
-        
+        width: 100%rem    
 .comments
     display: none
-.images-section
-    margin-bottom: 4rem
-    display: block
         
 .carousel
     width: 70%
-    display: block
-    margin-bottom: 2rem
     .carousel-control-prev-icon, .carousel-control-next-icon
         background-color: $color-purple
         border-radius: 0.2rem
+.caroussel-inner
+    width: 100%
 
 .carousel-item
     height: 100%
@@ -56,19 +58,12 @@ mgl-map
         max-height: 100%
         max-width: 100%
         border-radius: 1rem
+        width: 100%
 
-@include large
-    .carousel-inner
-        height: 13rem
-    .carousel
-        width: 80%
-    .strike-content
-        .img-main, .map
-            width: 80%
+
  
 @include tablet
-    .carousel-inner
-        height: 13rem
+
     .tab-content
         .my-btn
             width: 50%
@@ -78,11 +73,6 @@ mgl-map
             p
                 max-width: 90%
                 text-align: justify
-            
-    .other-section
-        display: flex
-        flex-direction: column
-    
     .file 
         width: 40%
 
