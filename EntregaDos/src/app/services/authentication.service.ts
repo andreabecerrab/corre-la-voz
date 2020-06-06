@@ -4,7 +4,14 @@ import { Router } from '@angular/router';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
-import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
+import {
+  from,
+  of,
+  Observable,
+  BehaviorSubject,
+  combineLatest,
+  throwError,
+} from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from './api.service';
@@ -13,7 +20,6 @@ import { ApiService } from './api.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
-
   user_for_db = {};
   user_type = '';
 
@@ -42,17 +48,18 @@ export class AuthenticationService {
   sessionData: any = this.storage.get('SESSION') || '';
 
   // AUTH0 Config
+  endpoint = 'http://localhost:8081/auth';
 
   auth0Client$ = (from(
     createAuth0Client({
-      domain: "dev-hmnnmmhr.auth0.com",
-      client_id: "RH3SHUX3bAAMBza85ZqTpCA4YO6lbolb",
+      domain: 'dev-hmnnmmhr.auth0.com',
+      client_id: 'RH3SHUX3bAAMBza85ZqTpCA4YO6lbolb',
       redirect_uri: `${window.location.origin}`,
-      audience: 'http://localhost:8081'
+      audience: 'http://localhost:8081',
     })
   ) as Observable<Auth0Client>).pipe(
     shareReplay(1), // Every subscription receives the same shared value
-    catchError(err => throwError(err))
+    catchError((err) => throwError(err))
   );
   // Define observables for SDK methods that return promises by default
   // For each Auth0 SDK method, first ensure the client instance is ready
@@ -60,7 +67,7 @@ export class AuthenticationService {
   // from: Convert that resulting promise into an observable
   isAuthenticated$ = this.auth0Client$.pipe(
     concatMap((client: Auth0Client) => from(client.isAuthenticated())),
-    tap(res => this.loggedIn = res)
+    tap((res) => (this.loggedIn = res))
   );
   handleRedirectCallback$ = this.auth0Client$.pipe(
     concatMap((client: Auth0Client) => from(client.handleRedirectCallback()))
@@ -76,7 +83,6 @@ export class AuthenticationService {
       concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
     );
   }
-
 
   constructor(
     @Inject(LOCAL_STORAGE) private storage: StorageService,
@@ -95,7 +101,7 @@ export class AuthenticationService {
   getUser$(options?): Observable<any> {
     return this.auth0Client$.pipe(
       concatMap((client: Auth0Client) => from(client.getUser(options))),
-      tap(user => this.userProfileSubject$.next(user))
+      tap((user) => this.userProfileSubject$.next(user))
     );
   }
 
@@ -124,7 +130,7 @@ export class AuthenticationService {
       // Call method to log in
       client.loginWithRedirect({
         redirect_uri: `${window.location.origin}`,
-        appState: { target: redirectPath }
+        appState: { target: redirectPath },
       });
     });
   }
@@ -136,36 +142,45 @@ export class AuthenticationService {
       let targetRoute: string; // Path to redirect to after login processsed
       const authComplete$ = this.handleRedirectCallback$.pipe(
         // Have client, now call method to handle auth callback redirect
-        tap(cbRes => {
+        tap((cbRes) => {
           // Get and set target redirect route from callback results
-          targetRoute = cbRes.appState && cbRes.appState.target ? cbRes.appState.target : '/';
+          targetRoute =
+            cbRes.appState && cbRes.appState.target
+              ? cbRes.appState.target
+              : '/';
         }),
         concatMap(() => {
           // Redirect callback complete; get user and login status
-          return combineLatest([
-            this.getUser$(),
-            this.isAuthenticated$
-          ]);
+          return combineLatest([this.getUser$(), this.isAuthenticated$]);
         })
       );
       // Subscribe to authentication completion observable
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
         // Redirect to target route after callback processing
-        console.log("USER------>");
+        console.log('USER------>');
         this.user_type = 'user';
-        if (user.sub == 'google-oauth2|112018040146262791493'){
+        if (user.sub == 'google-oauth2|112018040146262791493') {
           this.user_type = 'admin';
-          targetRoute = '/admin/inicio'
+          targetRoute = '/admin/inicio';
         }
         this.user_for_db = {
           name: user.given_name,
           last_name: user.family_name,
           email: user.email,
           type: this.user_type,
-          sub: user.sub
+          sub: user.sub,
         };
         console.log(this.user_for_db);
+
+        //mandar a DB
+        this.http
+          .post(this.endpoint + '/usuario/inicio', this.user_for_db)
+          .subscribe(
+            (response) => console.log('llego'),
+            (error) => console.log(error)
+          );
+
         this.router.navigate([targetRoute]);
       });
     }
@@ -176,8 +191,8 @@ export class AuthenticationService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
       client.logout({
-        client_id: "RH3SHUX3bAAMBza85ZqTpCA4YO6lbolb",
-        returnTo: `${window.location.origin}`
+        client_id: 'RH3SHUX3bAAMBza85ZqTpCA4YO6lbolb',
+        returnTo: `${window.location.origin}`,
       });
     });
   }
