@@ -1,20 +1,24 @@
 
 .tab-content
-    margin-top: 4.5rem
+    padding-top: 4.5rem
     display: flex
     justify-content: center
-    h2, h6, h5
+    h1, h2, h6, h5
         color: $rgba-header
-    h2 
+    h2, h1
         margin-bottom: 3rem
     a 
         color: $rgba-header
-
+        font-size: 17px
     a:hover 
         color: $color-purple
+        text-decoration: none
     .tab-pane
         padding-top: 5rem
         width: 70%
+        .section-style
+            justify-content: space-around
+            display: flex
 
     //profile data
     .profile
@@ -46,7 +50,8 @@
             background-color: $color-green
             color: color("white")
 
-    
+.center-color
+    background-color: white
 @include mobile
     .tab-content
         .p-data

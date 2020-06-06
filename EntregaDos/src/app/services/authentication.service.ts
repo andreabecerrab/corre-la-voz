@@ -160,7 +160,7 @@ export class AuthenticationService {
         // Redirect to target route after callback processing
         console.log('USER------>');
         this.user_type = 'user';
-        if (user.sub == 'google-oauth2|112018040146262791493') {
+        if (user.sub == 'google-oauth2|113536811334279305343') {
           this.user_type = 'admin';
           targetRoute = '/admin/inicio';
         }

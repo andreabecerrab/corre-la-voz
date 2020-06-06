@@ -1,4 +1,5 @@
-<div class="div-comments">
+<div class="div-comments center-items">
+  <h2>Lugares importantes</h2>
   <mgl-map
     [style]="'mapbox://styles/mapbox/streets-v11'"
     [zoom]="[15]"
@@ -44,9 +45,14 @@
     </ng-container>
   </mgl-map>
 
-  <div>
+  <div class="form">
     <label i18n="@@trafficPin">Comparte puntos de interés</label>
-    <input type="text" class="op-form-control" [(ngModel)]="titulo" />
+    <input
+      type="text"
+      class="op-form-control"
+      [(ngModel)]="titulo"
+      placeholder="Título/descripción del punto"
+    />
     <button class="my-btn" i18n="@@add" (click)="addPoint()">Agregar</button>
   </div>
   <!-- <form>

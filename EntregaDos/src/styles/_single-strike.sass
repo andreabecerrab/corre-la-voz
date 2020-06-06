@@ -19,7 +19,11 @@
         flex-direction: column
         justify-content: center
         margin-left: 1rem
-    form, .div-comments
+    .div-comments
+        width: 100%
+    .form
+        width: 70%
+    form 
         width: 70%
     
 .map-section
@@ -38,7 +42,9 @@
 
 mgl-map 
         height: 500px
-        width: 100%rem    
+        width: 100%rem   
+#map 
+    width: 70% 
 .comments
     display: none
         
@@ -67,13 +73,23 @@ mgl-map
     .tab-content
         .my-btn
             width: 50%
-        .img-main, .map, .strike-content, .carousel, .twitter
+        .img-main, .map, .strike-content, .carousel, #map, .comment-wrapper
             width: 100%
         .strike-content
+            .form
+                width: 100%
             p
                 max-width: 90%
                 text-align: justify
+    .center-color
+        background-color: transparent
     .file 
         width: 40%
 
+@include mobile
+    .tab-content .tab-pane
+        width: 90%
+    .tab-content .tab-pane .section-style
+        flex-direction: column
+        justify-content: center
     

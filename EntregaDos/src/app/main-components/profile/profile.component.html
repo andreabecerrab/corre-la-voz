@@ -1,7 +1,7 @@
 <div class="tab-content" id="pills-tabContent">
   <!-- PERFIL-->
   <div class="tab-pane show active">
-    <h2 i18n="@@profile">Perfil</h2>
+    <h1 i18n="@@profile">Perfil</h1>
     <div>
       <pre *ngIf="auth.userProfile$ | async as profile">
         <code>{{ profile | json }}</code>
