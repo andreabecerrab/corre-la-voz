@@ -180,7 +180,6 @@ export class AuthenticationService {
             (response) => console.log('llego'),
             (error) => console.log(error)
           );
-
         this.router.navigate([targetRoute]);
       });
     }

@@ -5,7 +5,6 @@
     <div>
       <pre *ngIf="auth.userProfile$ | async as profile">
         <code>{{ profile | json }}</code>
-        <div class="op-form-control profile">{{ profile.given_name }}</div>
       </pre>
       <h6 i18n="@@name">Nombre</h6>
       <div class="op-form-control profile">{{ usuario.nombre }}</div>
