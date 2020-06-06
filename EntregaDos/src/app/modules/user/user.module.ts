@@ -14,7 +14,6 @@ import { UserRoutingModule } from './user-routing.module';
 import { StrikecardComponent } from './components/strikecard/strikecard.component';
 import { HttpClientModule } from '@angular/common/http';
 //try 4 maps
-import { GoogleMapsModule } from '@angular/google-maps';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
   ],
   exports: [UserhomeComponent, ResourcesComponent],
   imports: [
-    GoogleMapsModule,
     CommonModule,
     FormsModule,
     UserRoutingModule,
