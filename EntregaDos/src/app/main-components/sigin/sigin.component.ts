@@ -23,7 +23,6 @@ export class SiginComponent implements OnInit {
   ngOnInit(): void {}
 
   post() {
-    this._userService.addUsuario(this.userForm.value);
     this.userForm.reset();
     this.router.navigate(['/login']);
   }

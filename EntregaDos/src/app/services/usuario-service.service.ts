@@ -1,49 +1,38 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { Usuario } from '../models/Usuario';
+import { AuthenticationService } from './authentication.service';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioServiceService {
 
-  id: number = 2;
-  usuarios: Usuario[] = [
-    {
-      id: 1,
-      nombre: 'Pedro',
-      apellido: 'Perez',
-      correo: 'pedrop@gmail.com',
-      contrasena: '12345'
-    }
-  ];
+  usuario: Usuario;
+  userUpdated = new Subject<Usuario>();
 
-  constructor() { }
+  constructor(private http: HttpClient, private auth: AuthenticationService) { }
 
-  getUsuarios(): Usuario{
-    return this.usuarios[0];
+  endpoint = 'http://localhost:8081/auth';
+
+  getUsuario(){
+    return this.http.get<Usuario>(this.endpoint + '/usuario').subscribe((data) => {
+      this.usuario = data;
+      this.userUpdated.next(this.usuario);
+      // console.log(this.usuario);
+    })
   }
 
-  addUsuario(body: FormData) {
-    let sbody = JSON.stringify(body);
-    var json = JSON.parse(sbody);
-    json.id = this.id;
-
-    this.usuarios.push(json);
-    this.id++;
+  getUserUpdatedListener(){
+    return this.userUpdated.asObservable();
   }
 
   editUsuario(body: FormData) {
-    let sbody = JSON.stringify(body);
-    var json = JSON.parse(sbody);
-
-    let original = this.usuarios.find((element) => element.id === 1);
-
-    for (let property in json) {
-      if (json[property] != '' && json[property] != null) {
-        original[property] = json[property];
-      }
-    }
-    console.log(this.usuarios);
+    this.http.put(this.endpoint + '/edit/usuario', body).subscribe(
+      (response) => console.log("Edited"),
+      (error) => console.log(error)
+    )
   }
 
 }

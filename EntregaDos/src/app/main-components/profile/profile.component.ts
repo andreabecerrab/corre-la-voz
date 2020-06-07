@@ -9,13 +9,14 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class ProfileComponent implements OnInit {
 
-  public usuario: Usuario;
+  public usuario;
   
   constructor(private userService:UsuarioServiceService, public auth:AuthenticationService) { 
   }
 
   ngOnInit(): void {
-    this.usuario = this.userService.getUsuarios();
+    this.userService.getUsuario();
+    this.usuario = this.userService.getUserUpdatedListener().subscribe((user) => (this.usuario = user));
   }
 
 }
