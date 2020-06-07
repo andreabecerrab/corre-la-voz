@@ -143,7 +143,7 @@ export class AuthenticationService {
         // Redirect to target route after callback processing
         console.log('USER------>');
         this.user_type = 'user';
-        if (user.sub == 'google-oauth2|113536811334279305343') {
+        if (user.sub == 'google-oauth2|113536811334279305343' || user.sub == 'google-oauth2|112018040146262791493') {
           this.user_type = 'admin';
           targetRoute = '/admin/inicio';
         }
@@ -157,13 +157,13 @@ export class AuthenticationService {
         console.log(this.user_for_db);
 
         //mandar a DB
+        this.router.navigate([targetRoute]);
         this.http
           .post(this.endpoint + '/usuario/inicio', this.user_for_db)
           .subscribe(
             (response) => console.log('llego'),
             (error) => console.log(error)
           );
-        this.router.navigate([targetRoute]);
       });
     }
   }
@@ -201,19 +201,19 @@ export class AuthenticationService {
       });
       this.sessionData = this.storage.get('SESSION');
 
-      this.loginSession();
+      // this.loginSession();
     } else {
       console.log('not found');
     }
   }
   //reload hasta hacer async
-  loginSession(): void {
-    if (this.sessionType === 'admin') {
-      this.router.navigate(['/admin/inicio']);
-    } else {
-      this.router.navigate(['/usuario/inicio']);
-    }
-  }
+  // loginSession(): void {
+  //   if (this.sessionType === 'admin') {
+  //     this.router.navigate(['/admin/inicio']);
+  //   } else {
+  //     this.router.navigate(['/usuario/inicio']);
+  //   }
+  // }
 
   logoutAction(): void {
     this.storage.clear();
