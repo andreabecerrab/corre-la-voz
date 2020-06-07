@@ -3,18 +3,12 @@
   <div class="tab-pane show active">
     <h1 i18n="@@profile">Perfil</h1>
     <div>
-      <pre *ngIf="auth.userProfile$ | async as profile">
-        <code>{{ profile | json }}</code>
-        <div class="op-form-control profile">{{ profile.given_name }}</div>
-      </pre>
       <h6 i18n="@@name">Nombre</h6>
       <div class="op-form-control profile">{{ usuario.nombre }}</div>
       <h6 i18n="@@lastName">Apellido</h6>
       <div class="op-form-control profile">{{ usuario.apellido }}</div>
       <h6 i18n="@@email">Correo</h6>
       <div class="op-form-control profile">{{ usuario.correo }}</div>
-      <h6>ID</h6>
-      <div class="op-form-control profile">{{ usuario.id }}</div>
       <button
         class="my-btn"
         i18n="@@edit"

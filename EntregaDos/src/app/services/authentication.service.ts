@@ -24,24 +24,7 @@ export class AuthenticationService {
   user_type = '';
 
   //fakeData
-  usuarios: Usuario[] = [
-    {
-      id: 1,
-      nombre: 'Pedro',
-      apellido: 'Perez',
-      correo: 'pedrop@gmail.com',
-      contrasena: '12345',
-      tipo: 'user',
-    },
-    {
-      id: 1,
-      nombre: 'Andrea',
-      apellido: 'Perez',
-      correo: 'andrea@gmail.com',
-      contrasena: 'admin',
-      tipo: 'admin',
-    },
-  ];
+  usuarios: Usuario[] = [];
   //usefullData
   public sessionLogin: boolean = false;
   sessionType: string;
@@ -180,7 +163,6 @@ export class AuthenticationService {
             (response) => console.log('llego'),
             (error) => console.log(error)
           );
-
         this.router.navigate([targetRoute]);
       });
     }

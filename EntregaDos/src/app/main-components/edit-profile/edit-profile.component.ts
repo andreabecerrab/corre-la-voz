@@ -15,10 +15,7 @@ export class EditProfileComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private _userService: UsuarioServiceService, private router: Router) {
     this.editUserForm = this.formBuilder.group({
       nombre: [''],
-      apellido: [''],
-      correo: [''],
-      contrasena: [''],
-      contrasenaconf: ['']
+      apellido: ['']
     });
   }
 
@@ -27,7 +24,7 @@ export class EditProfileComponent implements OnInit {
   edit(){
     console.log(this.editUserForm.value);
     this._userService.editUsuario(this.editUserForm.value);
-    this._userService.getUsuarios();
+    this._userService.getUsuario();
     this.editUserForm.reset();
     // this.router.navigate(['/usuario/perfil']);
   }
