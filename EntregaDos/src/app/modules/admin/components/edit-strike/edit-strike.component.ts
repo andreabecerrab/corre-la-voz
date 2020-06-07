@@ -21,7 +21,7 @@ export class EditStrikeComponent implements OnInit {
     this.marchaEditForm = this.formBuilder.group({
       nombre: [''],
       fecha: [''],
-      desc: [''],
+      descripcion: [''],
       hashtag: [''],
       direccion: [''],
       img: [''],

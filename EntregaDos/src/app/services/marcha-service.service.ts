@@ -79,7 +79,16 @@ export class MarchaServiceService {
 
     for (let property in json) {
       if (json[property] != '' && json[property] != null) {
-        original[property] = json[property];
+        if (property == 'direccion') {
+          original[property] = {
+            latitude: 0,
+            longitude: 0,
+            location: '',
+            address: json[property],
+          };
+        } else {
+          original[property] = json[property];
+        }
       }
     }
 

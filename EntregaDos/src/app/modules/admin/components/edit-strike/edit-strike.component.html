@@ -79,19 +79,10 @@
             <input
               type="text"
               class="op-form-control"
-              placeholder="Av. anibeuhoiw"
               formControlName="direccion"
-              placeholder="{{ address.address }}"
+              placeholder="{{ selectedEdit.direccion.address }}"
             />
           </div>
-          <!-- <div class="op-form-md">
-        <label i18n="@@endAddress">Dirección fin</label>
-          <input
-            type="text"
-            class="op-form-control"
-            placeholder="Av. anibeuhoiw"
-          />
-        </div> -->
         </div>
         <div class="form-row" style="margin-bottom: 2rem;">
           <div class="col-12" style="padding: 15px;">
@@ -99,8 +90,8 @@
               <label i18n="@@desc">Descripción</label>
               <i
                 *ngIf="
-                  marchaEditForm.controls['desc'].invalid &&
-                  marchaEditForm.controls['desc'].dirty
+                  marchaEditForm.controls['descripcion'].invalid &&
+                  marchaEditForm.controls['descripcion'].dirty
                 "
                 class="material-icons i-alert"
                 >error</i
@@ -109,7 +100,7 @@
             <textarea
               type="text"
               class="op-form-control"
-              formControlName="desc"
+              formControlName="descripcion"
               placeholder="{{ selectedEdit.descripcion }}"
             ></textarea>
           </div>

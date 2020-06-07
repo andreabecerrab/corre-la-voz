@@ -25,10 +25,9 @@ export class TableStrikesComponent implements OnInit {
     this.selectedDelete = id;
   }
   confirmDelete() {
-    console.log(this.selectedDelete);
     this._marchaServices.deleteMarcha(this.selectedDelete);
   }
   edit(strike: Marcha) {
-    this.selectedEdit = strike;
+    this.selectedEdit = this.strikes.find((e) => e._id === strike._id);
   }
 }
