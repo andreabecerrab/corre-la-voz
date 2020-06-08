@@ -27,8 +27,6 @@ export class EditProfileComponent implements OnInit {
 
   edit() {
     this._userService.editUsuario(this.editUserForm.value);
-    //this._userService.getUsuario();
     this.editUserForm.reset();
-    // this.router.navigate(['/usuario/perfil']);
   }
 }

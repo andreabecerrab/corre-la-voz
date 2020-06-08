@@ -77,45 +77,49 @@ export class MarchaServiceService {
 
     let original = this.marchas.find((element) => element._id === id);
 
-    for (let property in json) {
-      if (json[property] != '' && json[property] != null) {
-        if (property == 'direccion') {
-          original[property] = {
-            latitude: 0,
-            longitude: 0,
-            location: '',
-            address: json[property],
-          };
-        } else {
-          original[property] = json[property];
-        }
-      }
-    }
-
     this.http.put(this.endpoint + '/edit-marcha/' + id, body).subscribe(
-      (response) => console.log('Edited'),
+      (response) => {
+        console.log('Edited');
+        for (let property in json) {
+          if (json[property] != '' && json[property] != null) {
+            if (property == 'direccion') {
+              original[property] = {
+                latitude: 0,
+                longitude: 0,
+                location: '',
+                address: json[property],
+              };
+            } else {
+              original[property] = json[property];
+            }
+          }
+        }
+      },
       (error) => console.log(error)
     );
   }
 
   deleteMarcha(id: string) {
-    for (let i = 0; i < this.marchas.length; i++) {
-      if (this.marchas[i]._id === id) {
-        this.marchas.splice(i--, 1);
-      }
-    }
     this.http.delete(this.endpoint + '/delete-marcha/' + id).subscribe(
-      (response) => this.getMarchas(),
+      (response) => {
+        this.getMarchas();
+        for (let i = 0; i < this.marchas.length; i++) {
+          if (this.marchas[i]._id === id) {
+            this.marchas.splice(i--, 1);
+          }
+        }
+      },
       (error) => console.log(error)
     );
   }
 
   //user interactions
   postComentario(id: string, comentario: Comentario) {
-    this.marcha.comentarios.push(comentario);
-
     this.http.put(this.endpoint + '/add-comment/' + id, comentario).subscribe(
-      (response) => this.getMarcha(id),
+      (response) => {
+        this.getMarcha(id);
+        this.marcha.comentarios.push(comentario);
+      },
       (error) => console.log(error)
     );
   }
@@ -142,10 +146,11 @@ export class MarchaServiceService {
       longitude: lng,
     };
 
-    this.marcha.puntosLoc.push(punto);
-
     this.http.put(this.endpoint + '/add-marker/' + id, punto).subscribe(
-      (response) => this.getMarcha(id),
+      (response) => {
+        this.getMarcha(id);
+        this.marcha.puntosLoc.push(punto);
+      },
       (error) => console.log(error)
     );
   }
