@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
+import { UsuarioServiceService } from './services/usuario-service.service';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +11,12 @@ export class AppComponent {
   userlogin: boolean = false;
   adminlogin: boolean = false;
   sessionType;
+  public usuario;
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(public authenticationService: AuthenticationService, public userService:UsuarioServiceService) {}
 
   ngOnInit(): void {
-    this.sessionType = this.authenticationService.getCurrent();
-    console.log(this.sessionType.type);
-
-    if (this.sessionType.type === 'admin') {
-      this.adminlogin = true;
-    } else if (this.sessionType.type === 'user') {
-      this.userlogin = true;
-    } else {
-      this.userlogin = false;
-      this.adminlogin = false;
-    }
+    this.userService.getUsuario();
+    this.usuario = this.userService.getUserUpdatedListener().subscribe((user) => (this.usuario = user));
   }
 }

@@ -14,9 +14,5 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     fullHeight();
   }
-
-  logout(): void {
-    this.authenticationService.logoutAction();
-  }
  
 }

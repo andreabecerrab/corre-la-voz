@@ -25,10 +25,6 @@ export class AuthenticationService {
 
   //fakeData
   usuarios: Usuario[] = [];
-  //usefullData
-  public sessionLogin: boolean = false;
-  sessionType: string;
-  sessionData: any = this.storage.get('SESSION') || '';
 
   // AUTH0 Config
   endpoint = 'http://localhost:8081/auth';
@@ -141,7 +137,7 @@ export class AuthenticationService {
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
         // Redirect to target route after callback processing
-        console.log('USER------>');
+        // console.log('USER------>');
         this.user_type = 'user';
         if (user.sub == 'google-oauth2|113536811334279305343' || user.sub == 'google-oauth2|112018040146262791493') {
           this.user_type = 'admin';
@@ -154,9 +150,8 @@ export class AuthenticationService {
           type: this.user_type,
           sub: user.sub,
         };
-        console.log(this.user_for_db);
 
-        //mandar a DB
+        // //mandar a DB
         this.router.navigate([targetRoute]);
         this.http
           .post(this.endpoint + '/usuario/inicio', this.user_for_db)
@@ -170,6 +165,7 @@ export class AuthenticationService {
 
   logout() {
     // Ensure Auth0 client instance exists
+
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
       client.logout({
@@ -179,46 +175,4 @@ export class AuthenticationService {
     });
   }
 
-  public get currentUserValue() {
-    return this.storage.get('SESSION') || '';
-  }
-
-  getCurrent() {
-    let t = this.storage.get('SESSION') || '';
-    return t;
-  }
-
-  loginAction(user_email: string, password: string): void {
-    let user = this.usuarios.find((element) => element.correo === user_email);
-    if (typeof user !== 'undefined') {
-      this.sessionLogin = true;
-      this.sessionType = user.tipo;
-
-      this.storage.set('SESSION', {
-        user: user_email,
-        pass: password,
-        type: user.tipo,
-      });
-      this.sessionData = this.storage.get('SESSION');
-
-      // this.loginSession();
-    } else {
-      console.log('not found');
-    }
-  }
-  //reload hasta hacer async
-  // loginSession(): void {
-  //   if (this.sessionType === 'admin') {
-  //     this.router.navigate(['/admin/inicio']);
-  //   } else {
-  //     this.router.navigate(['/usuario/inicio']);
-  //   }
-  // }
-
-  logoutAction(): void {
-    this.storage.clear();
-    this.sessionData = '';
-    this.sessionType = '';
-    // this.router.navigate(['/login']);
-  }
 }

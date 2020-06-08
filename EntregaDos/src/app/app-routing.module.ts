@@ -6,6 +6,7 @@ import { InterceptorService } from './services/interceptor.service';
 
 //modules
 import { IndexComponent } from './modules/landingpage/components/index/index.component';
+import { AdminAuthGuard } from './guards/admin-auth.guard';
 //components
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: './modules/admin/admin.module#AdminModule',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminAuthGuard],
   },
 ];
 @NgModule({
