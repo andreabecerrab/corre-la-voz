@@ -11,7 +11,6 @@ import { EditProfileComponent } from 'src/app/main-components/edit-profile/edit-
 const routes: Routes = [
   { path: 'inicio', component: UserhomeComponent },
   { path: 'marcha/:id', component: ResourcesComponent },
-  { path: 'perfil', component: ProfileComponent },
   { path: 'editar-perfil', component: EditProfileComponent },
 ];
 
