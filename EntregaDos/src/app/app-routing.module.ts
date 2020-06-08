@@ -7,11 +7,7 @@ import { InterceptorService } from './services/interceptor.service';
 //modules
 import { IndexComponent } from './modules/landingpage/components/index/index.component';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
-<<<<<<< HEAD
 import { ProfileComponent } from './main-components/profile/profile.component';
-=======
-import { ProfileComponent } from './main-components/profile/profile.component'
->>>>>>> 858d93f8180df8a2be5cd4fa290a8a5d099d9c14
 //components
 
 const routes: Routes = [
@@ -26,10 +22,10 @@ const routes: Routes = [
     loadChildren: './modules/user/user.module#UserModule',
     canActivate: [AuthGuard],
   },
-  { 
-    path: 'perfil', 
+  {
+    path: 'perfil',
     component: ProfileComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   //admin
