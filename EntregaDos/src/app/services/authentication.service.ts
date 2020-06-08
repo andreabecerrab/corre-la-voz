@@ -101,7 +101,6 @@ export class AuthenticationService {
   }
 
   login(redirectPath: string = '/usuario/inicio') {
-    this.sessionLogin = true;
     // A desired redirect path can be passed to login method
     // (e.g., from a route guard)
     // Ensure Auth0 client instance exists
