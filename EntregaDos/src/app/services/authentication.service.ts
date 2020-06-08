@@ -100,7 +100,7 @@ export class AuthenticationService {
     checkAuth$.subscribe();
   }
 
-  login(redirectPath: string = '/usuario/inicio') {
+  login(redirectPath: string = '/') {
     // A desired redirect path can be passed to login method
     // (e.g., from a route guard)
     // Ensure Auth0 client instance exists
@@ -138,6 +138,7 @@ export class AuthenticationService {
         // Redirect to target route after callback processing
         // console.log('USER------>');
         this.user_type = 'user';
+        targetRoute = '/usuario/inicio';
         if (
           user.sub == 'google-oauth2|113536811334279305343' ||
           user.sub == 'google-oauth2|112018040146262791493'
@@ -155,12 +156,10 @@ export class AuthenticationService {
 
         // //mandar a DB
         this.router.navigate([targetRoute]);
+
         this.http
           .post(this.endpoint + '/usuario/inicio', this.user_for_db)
-          .subscribe(
-            (response) => console.log('llego'),
-            (error) => console.log(error)
-          );
+          .subscribe((error) => console.log(error));
       });
     }
   }

@@ -7,6 +7,7 @@ import { InterceptorService } from './services/interceptor.service';
 //modules
 import { IndexComponent } from './modules/landingpage/components/index/index.component';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
+import { ProfileComponent } from './main-components/profile/profile.component';
 //components
 
 const routes: Routes = [
@@ -26,6 +27,12 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: './modules/admin/admin.module#AdminModule',
+    canActivate: [AuthGuard],
+  },
+  //perfil
+  {
+    path: 'perfil',
+    component: ProfileComponent,
     canActivate: [AuthGuard],
   },
 ];
