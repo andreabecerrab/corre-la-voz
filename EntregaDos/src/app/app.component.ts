@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
+import { UsuarioServiceService } from './services/usuario-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,12 @@ import { AuthenticationService } from './services/authentication.service';
 })
 export class AppComponent {
   title = 'EntregaDos';
+  public usuario;
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(public authenticationService: AuthenticationService, public userService:UsuarioServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.getUsuario();
+    this.usuario = this.userService.getUserUpdatedListener().subscribe((user) => (this.usuario = user));
+  }
 }
