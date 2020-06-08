@@ -7,23 +7,8 @@ import { AuthenticationService } from './services/authentication.service';
 })
 export class AppComponent {
   title = 'EntregaDos';
-  userlogin: boolean = false;
-  adminlogin: boolean = false;
-  sessionType;
 
   constructor(public authenticationService: AuthenticationService) {}
 
-  ngOnInit(): void {
-    this.sessionType = this.authenticationService.getCurrent();
-    console.log(this.sessionType.type);
-
-    if (this.sessionType.type === 'admin') {
-      this.adminlogin = true;
-    } else if (this.sessionType.type === 'user') {
-      this.userlogin = true;
-    } else {
-      this.userlogin = false;
-      this.adminlogin = false;
-    }
-  }
+  ngOnInit(): void {}
 }

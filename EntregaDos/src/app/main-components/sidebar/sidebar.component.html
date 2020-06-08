@@ -7,7 +7,6 @@
   </div>
   <!-- SIDEBAR CONTENT  -->
 
- 
   <div class="sidebar-content">
     <h1>Corre la Voz</h1>
     <!-- LINKS  -->
@@ -18,7 +17,6 @@
           routerLinkActive="class1"
           class="nav-link"
           i18n="@@profile"
-          
           >Perfil</a
         >
       </li>
@@ -50,11 +48,10 @@
         >
       </li>
       <li class="nav-item">
-        <a 
-          (click)="logout()" 
-          class="nav-link" 
-          i18n="@@signOut" 
-          (click)="authenticationService.logout()" 
+        <a
+          (click)="authenticationService.logout()"
+          class="nav-link"
+          i18n="@@signOut"
           *ngIf="authenticationService.loggedIn"
           >Cerrar sesión</a
         >

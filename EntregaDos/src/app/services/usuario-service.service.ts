@@ -21,7 +21,6 @@ export class UsuarioServiceService {
       .subscribe((data) => {
         this.usuario = data;
         this.userUpdated.next(this.usuario);
-        // console.log(this.usuario);
       });
   }
 

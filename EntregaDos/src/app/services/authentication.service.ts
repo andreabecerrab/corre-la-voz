@@ -23,7 +23,6 @@ export class AuthenticationService {
   user_for_db = {};
   user_type = '';
 
-  //fakeData
   usuarios: Usuario[] = [];
   //usefullData
   public sessionLogin: boolean = false;
@@ -61,12 +60,6 @@ export class AuthenticationService {
   // Create a local property for login status
   loggedIn: boolean = null;
 
-  getTokenSilently$(options?): Observable<string> {
-    return this.auth0Client$.pipe(
-      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
-    );
-  }
-
   constructor(
     @Inject(LOCAL_STORAGE) private storage: StorageService,
     private router: Router,
@@ -79,6 +72,12 @@ export class AuthenticationService {
     this.handleAuthCallback();
   }
 
+  getTokenSilently$(options?): Observable<string> {
+    return this.auth0Client$.pipe(
+      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
+    );
+  }
+
   // When calling, options can be passed if desired
   // https://auth0.github.io/auth0-spa-js/classes/auth0client.html#getuser
   getUser$(options?): Observable<any> {
@@ -88,7 +87,7 @@ export class AuthenticationService {
     );
   }
 
-  private localAuthSetup() {
+  public localAuthSetup() {
     // This should only be called on app initialization
     // Set up local authentication streams
     const checkAuth$ = this.isAuthenticated$.pipe(
@@ -106,6 +105,7 @@ export class AuthenticationService {
   }
 
   login(redirectPath: string = '/usuario/inicio') {
+    this.sessionLogin = true;
     // A desired redirect path can be passed to login method
     // (e.g., from a route guard)
     // Ensure Auth0 client instance exists
@@ -143,7 +143,10 @@ export class AuthenticationService {
         // Redirect to target route after callback processing
         console.log('USER------>');
         this.user_type = 'user';
-        if (user.sub == 'google-oauth2|113536811334279305343' || user.sub == 'google-oauth2|112018040146262791493') {
+        if (
+          user.sub == 'google-oauth2|113536811334279305343' ||
+          user.sub == 'google-oauth2|112018040146262791493'
+        ) {
           this.user_type = 'admin';
           targetRoute = '/admin/inicio';
         }
@@ -177,48 +180,5 @@ export class AuthenticationService {
         returnTo: `${window.location.origin}`,
       });
     });
-  }
-
-  public get currentUserValue() {
-    return this.storage.get('SESSION') || '';
-  }
-
-  getCurrent() {
-    let t = this.storage.get('SESSION') || '';
-    return t;
-  }
-
-  loginAction(user_email: string, password: string): void {
-    let user = this.usuarios.find((element) => element.correo === user_email);
-    if (typeof user !== 'undefined') {
-      this.sessionLogin = true;
-      this.sessionType = user.tipo;
-
-      this.storage.set('SESSION', {
-        user: user_email,
-        pass: password,
-        type: user.tipo,
-      });
-      this.sessionData = this.storage.get('SESSION');
-
-      // this.loginSession();
-    } else {
-      console.log('not found');
-    }
-  }
-  //reload hasta hacer async
-  // loginSession(): void {
-  //   if (this.sessionType === 'admin') {
-  //     this.router.navigate(['/admin/inicio']);
-  //   } else {
-  //     this.router.navigate(['/usuario/inicio']);
-  //   }
-  // }
-
-  logoutAction(): void {
-    this.storage.clear();
-    this.sessionData = '';
-    this.sessionType = '';
-    // this.router.navigate(['/login']);
   }
 }

@@ -1,5 +1,13 @@
 <app-header></app-header>
-<app-user-sidebar *ngIf="authenticationService.loggedIn&&authenticationService.user_type=='user'"></app-user-sidebar>
-<app-sidebar *ngIf="authenticationService.loggedIn&&authenticationService.user_type=='admin'"></app-sidebar>
-<div>{{ sessionType }}</div>
+<app-user-sidebar
+  *ngIf="
+    authenticationService.loggedIn && authenticationService.user_type == 'user'
+  "
+></app-user-sidebar>
+<app-sidebar
+  *ngIf="
+    authenticationService.loggedIn && authenticationService.user_type == 'admin'
+  "
+></app-sidebar>
+
 <router-outlet></router-outlet>

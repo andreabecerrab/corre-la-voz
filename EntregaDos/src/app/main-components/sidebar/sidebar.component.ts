@@ -10,13 +10,7 @@ declare const fullHeight: any;
 export class SidebarComponent implements OnInit {
   constructor(public authenticationService: AuthenticationService) {}
 
-
   ngOnInit(): void {
     fullHeight();
   }
-
-  logout(): void {
-    this.authenticationService.logoutAction();
-  }
- 
 }
