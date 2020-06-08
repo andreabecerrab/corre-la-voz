@@ -21,7 +21,7 @@ import { ApiService } from './api.service';
 })
 export class AuthenticationService {
   user_for_db = {};
-  user_type = '';
+  user_type;
 
   usuarios: Usuario[] = [];
 

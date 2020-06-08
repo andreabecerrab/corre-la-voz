@@ -11,7 +11,6 @@ import { AdminGraphComponent } from './components/admin-graph/admin-graph.compon
 const routes: Routes = [
   { path: 'inicio', component: AdminDashboardComponent },
   { path: 'marchas', component: TableStrikesComponent },
-  { path: 'perfil', component: ProfileComponent },
   { path: 'info', component: AdminGraphComponent },
 ];
 
