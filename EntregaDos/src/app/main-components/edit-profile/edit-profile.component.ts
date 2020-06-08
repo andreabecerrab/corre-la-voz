@@ -12,21 +12,23 @@ export class EditProfileComponent implements OnInit {
   @Input() userSelected: Usuario;
   editUserForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private _userService: UsuarioServiceService, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private _userService: UsuarioServiceService,
+    private router: Router
+  ) {
     this.editUserForm = this.formBuilder.group({
       nombre: [''],
-      apellido: ['']
+      apellido: [''],
     });
   }
 
   ngOnInit(): void {}
 
-  edit(){
-    console.log(this.editUserForm.value);
+  edit() {
     this._userService.editUsuario(this.editUserForm.value);
-    this._userService.getUsuario();
+    //this._userService.getUsuario();
     this.editUserForm.reset();
     // this.router.navigate(['/usuario/perfil']);
   }
-
 }

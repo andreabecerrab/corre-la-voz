@@ -30,6 +30,13 @@ export class UsuarioServiceService {
   }
 
   editUsuario(body: FormData) {
+    for (let property in body) {
+      if (body[property] != '' && body[property] != null) {
+        this.usuario[property] = body[property];
+      }
+    }
+    console.log(this.userUpdated);
+
     this.http.put(this.endpoint + '/edit/usuario', body).subscribe(
       (response) => console.log('Edited'),
       (error) => console.log(error)
