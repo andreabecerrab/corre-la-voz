@@ -18,18 +18,30 @@ export class MarchaServiceService {
   private marcha: Marcha = null;
   private marchaUpdated = new Subject<Marcha[]>();
   private marchaSelected = new Subject<Marcha>();
+  public totalPosts;
+  private totalPostsListener = new Subject<number>();
 
   //pagination
-  totalPost = 10;
+  //totalPost = 10;
 
   constructor(private http: HttpClient) {}
   endpoint = 'http://localhost:8081/api';
 
-  getMarchas() {
-    this.http.get<Marcha[]>(this.endpoint + '/marchas').subscribe((data) => {
-      this.marchas = data;
-      this.marchaUpdated.next([...this.marchas]);
-    });
+  getMarchas(postsPerPage: number, currentPage: number) {
+    const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
+
+    this.http
+      .get<Marcha[]>(this.endpoint + '/marchas' + queryParams)
+      .subscribe((data) => {
+        this.totalPosts = data['maxPosts'];
+        this.totalPostsListener.next(this.totalPosts);
+        this.marchas = data['marchas'];
+        this.marchaUpdated.next([...this.marchas]);
+      });
+  }
+
+  getTotalPosts() {
+    return this.totalPostsListener.asObservable();
   }
 
   getMarchasUpdatedListener() {
@@ -101,10 +113,10 @@ export class MarchaServiceService {
     );
   }
 
-  deleteMarcha(id: string) {
+  deleteMarcha(id: string, postsPerPage: number, currentPage: number) {
     this.http.delete(this.endpoint + '/delete-marcha/' + id).subscribe(
       (response) => {
-        this.getMarchas();
+        this.getMarchas(postsPerPage, currentPage);
         for (let i = 0; i < this.marchas.length; i++) {
           if (this.marchas[i]._id === id) {
             this.marchas.splice(i--, 1);
