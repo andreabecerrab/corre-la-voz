@@ -47,6 +47,7 @@ export class UserhomeComponent implements OnInit {
     this.total = this._marchaServices
       .getTotalPosts()
       .subscribe((total: number) => (this.totalPost = total));
+      
   }
 
   onChangePage(pageData: PageEvent) {
