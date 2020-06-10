@@ -6,7 +6,7 @@ import { CarrusselComponent } from './components/carrussel/carrussel.component';
 import { ContentMapaComponent } from './components/content-mapa/content-mapa.component';
 import { ContentDescripcionMarcharchasComponent } from './components/content-descripcion-marcharchas/content-descripcion-marcharchas.component';
 import { ResourcesComponent } from './components/resources/resources.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { CommentsComponent } from './components/comments/comments.component';
 //routing
@@ -30,6 +30,7 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
   imports: [
     CommonModule,
     FormsModule,
+    MatPaginatorModule,
     UserRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

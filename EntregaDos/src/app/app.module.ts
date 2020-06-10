@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './main-components/header/header.component';
 import { SidebarComponent } from './main-components/sidebar/sidebar.component';
 import { ProfileComponent } from './main-components/profile/profile.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { RibbonComponent } from './main-components/ribbon/ribbon.component';
 //modules
 import { LandingpageModule } from './modules/landingpage/landingpage.module';
@@ -44,6 +44,7 @@ import { from } from 'rxjs';
     LandingpageModule,
     UserModule,
     AdminModule,
+    MatPaginatorModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ChartsModule,

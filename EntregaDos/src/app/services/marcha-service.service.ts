@@ -19,8 +19,10 @@ export class MarchaServiceService {
   private marchaUpdated = new Subject<Marcha[]>();
   private marchaSelected = new Subject<Marcha>();
 
-  constructor(private http: HttpClient) {}
+  //pagination
+  totalPost = 10;
 
+  constructor(private http: HttpClient) {}
   endpoint = 'http://localhost:8081/api';
 
   getMarchas() {
