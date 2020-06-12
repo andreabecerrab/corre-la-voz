@@ -1,22 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+
+
 import * as pluginDataLabels from 'chart.js';
 import { Label } from 'ng2-charts';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
 import { Subscription } from 'rxjs';
-
 @Component({
   selector: 'app-admin-graph',
   templateUrl: './admin-graph.component.html'
 })
+
+
 export class AdminGraphComponent implements OnInit {
+  @Input() va;
  
-  private total: Subscription;
+   total;
   
 
   //pagination
   totalPost;
-  constructor(private _marchaServices: MarchaServiceService) {}
+  constructor(public _marchaServices: MarchaServiceService) {}
+
   
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -29,7 +34,7 @@ export class AdminGraphComponent implements OnInit {
       }
     }
   };
-  public barChartLabels: Label[] = ['dia 1', 'dia 2', 'dia 3', 'dia 4', 'dia 5'];
+  public barChartLabels: Label[] = ['Total de marchas hasta el dia de hoy'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
@@ -37,24 +42,41 @@ export class AdminGraphComponent implements OnInit {
 
   public barChartData: ChartDataSets[];
  
+ 
 
   ngOnInit() {
-    this.total = this._marchaServices
-    .getTotalPosts()
-    .subscribe((total: number) => (this.totalPost = total));
-   
 
+   
+    
+    
+    
+    this.total=this._marchaServices.getTotal()
+    .toPromise()
+  //output: 'First Example'
+  .then(result => {
+    console.log('From Promise:', result);
+    this.varFrameData(result);
+    
+    
+  });
+  
+
+
+  console.log("total macha:"+this.total);
+
+  }
+
+  public varFrameData(ar:any){
+    
+    
     this.barChartData=[
     
-      { data:[this.totalPost] , label: 'Marchas' }
-
-
+      { data:[ar], label: 'Marchas' }
+  
+  
       
     ];
-    
-  console.log("total macha:"+this.totalPost);
-    
-    
+      
 
   }
 
@@ -67,17 +89,17 @@ export class AdminGraphComponent implements OnInit {
     console.log(event, active);
   }
 
-  // public randomize(): void {
-  //   // Only Change 3 values
-  //   const data = [
-  //     Math.round(Math.random() * 100),
-  //     59,
-  //     80,
-  //     (Math.random() * 100),
-  //     56,
-  //     (Math.random() * 100),
-  //     40];
-  //   this.barChartData[0].data = data;
-  // }
+  public randomize(): void {
+    // Only Change 3 values
+    // const data = [
+    //   Math.round(Math.random() * 100),
+    //   59,
+    //   80,
+    //   (Math.random() * 100),
+    //   56,
+    //   (Math.random() * 100),
+    //   40];
+    // this.barChartData[0].data = data;
+  }
 
 }

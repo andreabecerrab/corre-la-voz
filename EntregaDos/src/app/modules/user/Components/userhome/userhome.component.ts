@@ -46,8 +46,8 @@ export class UserhomeComponent implements OnInit {
       .subscribe((strikes: Marcha[]) => (this.strikes = strikes));
     this.total = this._marchaServices
       .getTotalPosts()
-      .subscribe((total: number) => (this.totalPost = total));
-      
+      .subscribe((total: number) => (this.totalPost=total));
+      // console.log("total de marchas: "+this.totalPost);
   }
 
   onChangePage(pageData: PageEvent) {

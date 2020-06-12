@@ -141,7 +141,8 @@ export class AuthenticationService {
         targetRoute = '/usuario/inicio';
         if (
           user.sub == 'google-oauth2|113536811334279305343' ||
-          user.sub == 'google-oauth2|112018040146262791493'
+          user.sub == 'google-oauth2|112018040146262791493' ||
+          user.sub ==  'google-oauth2|108979601279268274748'
         ) {
           this.user_type = 'admin';
           targetRoute = '/admin/inicio';
