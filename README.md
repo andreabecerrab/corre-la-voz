@@ -1,8 +1,22 @@
 # corre-la-voz 👋👋🏿👋🏽👋🏻👋🏾👋🏼
 Angular web application
 
+## To run the application
+From EntregaDos folder
+```
+npm i
+ng serve
+localhost 4200
+```
+Backend
+> https://github.com/andreabecerrab/corre-la-voz-backend
+```
+npm i
+npm start
+localhost 8081
+```
 
-## Development Team
+## Tec matricula
 
 andreabecerrab - Andrea Beatriz Becerra Bolaños - a01337434
 liaDiaz - Lia Citlali Díaz García - a01339760
