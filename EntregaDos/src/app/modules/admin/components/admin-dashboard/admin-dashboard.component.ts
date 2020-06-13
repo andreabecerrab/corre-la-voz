@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MarchaServiceService } from 'src/app/services/marcha-service.service';
-
 import { mimeType } from './mime-type-controller';
 
 @Component({
@@ -42,6 +41,7 @@ export class AdminDashboardComponent implements OnInit {
       this.marchaForm.value.direccion,
       this.marchaForm.value.img
     );
+
     this.marchaForm.reset();
   }
 }

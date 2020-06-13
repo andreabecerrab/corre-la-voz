@@ -42,7 +42,12 @@
       id="exampleFormControlFile1"
       (change)="onImagePicked($event)"
     />
-    <button type="button" class="my-btn" (click)="post()">
+    <button
+      type="button"
+      class="my-btn"
+      (click)="post()"
+      [disabled]="addimageForm.invalid"
+    >
       Post
     </button>
   </form>

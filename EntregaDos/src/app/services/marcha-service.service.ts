@@ -93,7 +93,6 @@ export class MarchaServiceService {
 
     this.http.put(this.endpoint + '/edit-marcha/' + id, body).subscribe(
       (response) => {
-        console.log('Edited');
         for (let property in json) {
           if (json[property] != '' && json[property] != null) {
             if (property == 'direccion') {
