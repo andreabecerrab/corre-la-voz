@@ -29,6 +29,7 @@ export class EditStrikeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.address = this.selectedEdit.direccion;
+    activateT();
   }
 
   edit() {
