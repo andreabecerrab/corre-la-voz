@@ -34,7 +34,7 @@ export class MarchaServiceService {
     this.http
       .get<Marcha[]>(this.endpoint + '/marchas' + queryParams)
       .subscribe((data) => {
-        this.totalPosts = data['maxPosts'];
+        this.totalPosts = data['maxPost'];
         this.totalPostsListener.next(this.totalPosts);
         this.marchas = data['marchas'];
         this.marchaUpdated.next([...this.marchas]);
