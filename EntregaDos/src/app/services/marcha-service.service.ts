@@ -19,6 +19,7 @@ export class MarchaServiceService {
   private marchaUpdated = new Subject<Marcha[]>();
   private marchaSelected = new Subject<Marcha>();
   public totalPosts;
+  public total;
   private totalPostsListener = new Subject<number>();
 
   //pagination
@@ -38,11 +39,18 @@ export class MarchaServiceService {
         this.marchas = data['marchas'];
         this.marchaUpdated.next([...this.marchas]);
       });
+     
   }
 
   getTotalPosts() {
+    console.log(this.totalPosts);
+   
     return this.totalPostsListener.asObservable();
+    
   }
+
+  
+
 
   getMarchasUpdatedListener() {
     return this.marchaUpdated.asObservable();
@@ -59,6 +67,12 @@ export class MarchaServiceService {
   getMarchaUpdatedListener() {
     return this.marchaSelected.asObservable();
   }
+
+  getTotal(){
+    // console.log(this.total);
+    return this.http.get(this.endpoint + '/total');
+  }
+
 
   async addMarcha(
     nombre: string,

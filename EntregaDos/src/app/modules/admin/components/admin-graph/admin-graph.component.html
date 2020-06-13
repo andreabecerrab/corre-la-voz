@@ -1,6 +1,6 @@
 <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane show active index-page">
-      <div style="display: block">
+      <div style="display: block" *ngIf="barChartData">
         <canvas baseChart
           [datasets]="barChartData"
           [labels]="barChartLabels"
@@ -10,6 +10,6 @@
           [chartType]="barChartType">
         </canvas>
       </div>
-      <button mat-button mat-raised-button color="primary" class="my-btn" (click)="randomize()">Update</button>
+      
     </div>
 </div>
