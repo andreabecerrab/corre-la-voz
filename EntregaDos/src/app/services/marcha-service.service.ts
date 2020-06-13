@@ -34,23 +34,17 @@ export class MarchaServiceService {
     this.http
       .get<Marcha[]>(this.endpoint + '/marchas' + queryParams)
       .subscribe((data) => {
-        this.totalPosts = data['maxPosts'];
+        this.totalPosts = data['maxPost'];
         this.totalPostsListener.next(this.totalPosts);
         this.marchas = data['marchas'];
         this.marchaUpdated.next([...this.marchas]);
       });
-     
   }
 
   getTotalPosts() {
     console.log(this.totalPosts);
-   
     return this.totalPostsListener.asObservable();
-    
   }
-
-  
-
 
   getMarchasUpdatedListener() {
     return this.marchaUpdated.asObservable();
@@ -68,11 +62,10 @@ export class MarchaServiceService {
     return this.marchaSelected.asObservable();
   }
 
-  getTotal(){
+  getTotal() {
     // console.log(this.total);
     return this.http.get(this.endpoint + '/total');
   }
-
 
   async addMarcha(
     nombre: string,
