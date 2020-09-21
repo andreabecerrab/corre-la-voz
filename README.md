@@ -39,7 +39,7 @@ localhost 8081
 
 ## Integrating
 
-https://www.mapbox.com/
+https://www.mapbox.com/ <br/>
 https://auth0.com/
 
 ## Screenshots
