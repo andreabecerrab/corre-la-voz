@@ -1,6 +1,6 @@
 # 🦸🏼‍♀️👋🏾👋🏼 Corre la Voz 👋🏻👋🏾🦸🏼‍♀️
 
-Angular web application
+Angular web application <br/>
 Corre la Voz is a platform to consult and manage 🇲🇽 strikes
 *User module - Share information about the strike - Add important strike locations - Share images
 *Admin module - Add strikes - Edit
