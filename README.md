@@ -1,23 +1,32 @@
-# corre-la-voz 👋👋🏿👋🏽👋🏻👋🏾👋🏼
-Angular web application
+# 🦸🏼‍♀️👋🏾👋🏼 Corre la Voz 👋🏻👋🏾🦸🏼‍♀️
 
-## To run the application
-From EntregaDos folder
+Angular web application
+Corre la Voz is a platform to consult and manage 🇲🇽 strikes
+*User module - Share information about the strike - Add important strike locations - Share images
+*Admin module - Add strikes - Edit
+
+## Installation
+
+From App folder
+
 ```
 npm i
 ng serve
 localhost 4200
 ```
+
 Backend
+
 > https://github.com/andreabecerrab/corre-la-voz-backend
+
 ```
 npm i
 npm start
 localhost 8081
 ```
 
-
 ## Development Team
+
 <table>
    <tr>
     <td align="center"><a href="https://github.com/morenoloza98"><img src="https://avatars3.githubusercontent.com/u/45719935?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Alejandro Moreno</b></sub></a><br /></td>
@@ -26,4 +35,12 @@ localhost 8081
   </tr>
 </table>
 
+##Technologies
 
+-Angular
+-Express
+-MongoDB
+
+##Integrating
+
+##Screenshots
