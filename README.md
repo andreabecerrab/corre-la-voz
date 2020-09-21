@@ -35,12 +35,18 @@ localhost 8081
   </tr>
 </table>
 
-##Technologies
+## Technologies
 
--Angular
--Express
--MongoDB
+**Angular
+**Express
+\*\*MongoDB
 
-##Integrating
+## Integrating
 
-##Screenshots
+![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Img/logomapbox.png)
+![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Img/autho.png)
+
+## Screenshots
+
+![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Img/userapp.jpg)
+![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Img/adminapp.jpeg)
