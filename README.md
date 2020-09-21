@@ -16,9 +16,6 @@ npm start
 localhost 8081
 ```
 
-## Architecture
-![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Octavo%20semestre%20-%20docs%20-%20Web.png)
-
 
 ## Development Team
 <table>
@@ -29,8 +26,4 @@ localhost 8081
   </tr>
 </table>
 
-## Tec matricula
 
-andreabecerrab - Andrea Beatriz Becerra Bolaños - a01337434
-liaDiaz - Lia Citlali Díaz García - a01339760
-morenoloza98 - Alejandro Moreno Loza - A01654319
