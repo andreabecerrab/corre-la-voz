@@ -35,16 +35,12 @@ localhost 8081
   </tr>
 </table>
 
-## Technologies
 
-**Angular
-**Express
-\*\*MongoDB
 
 ## Integrating
 
-![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Img/logomapbox.png)
-![alt text](https://github.com/andreabecerrab/corre-la-voz/blob/master/Img/autho.png)
+https://www.mapbox.com/
+https://auth0.com/
 
 ## Screenshots
 
