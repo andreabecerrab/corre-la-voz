@@ -2,10 +2,14 @@
 
 Angular web application <br/>
 Corre la Voz is a platform to consult and manage 🇲🇽 strikes <br/>
+
+
 **User module**
 - Share information about the strike 
 - Add important strike locations 
 - Share images<br/>
+
+
 **Admin module** <br/>
 - Add strikes 
 - Edit
